@@ -1,2 +1,2 @@
 # Any.do-Clone
-A clone of Any.do To-Do List 
+A clone of Any.do To-Do List website
