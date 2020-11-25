@@ -3,10 +3,9 @@ body{
     background-image: url("https://cdn.pixabay.com/photo/2018/11/10/22/57/nature-3807667_1280.jpg");
 }
 
-#user {
+#side_bar {
     height: 630px;
-    overflow-y:scroll;
-    transform: scaleY(1.03);
+    overflow-y:scroll !important;
 }
 
 #collapse_btns{
@@ -26,9 +25,6 @@ body{
 #banner {
     background-color: rgb(6, 211, 156);
     padding: 10px;
-}
-#side_bar {
-    height: 632px;
 }
 
 #welcome {
