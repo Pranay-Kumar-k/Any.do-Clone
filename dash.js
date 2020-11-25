@@ -1,3 +1,70 @@
+
+let users = {
+    chandra:{
+        name : "chandra Mouli",
+        email: "mouliofficial98@gmail.com",
+        tasks: {
+            personal:{
+                0:["milk","laundry"],
+                1:["something","files"]
+            },
+            work:{
+                0:["milk","laundry"],
+                1:["something","files"]
+            },
+            grocery: {
+                0:["milk","laundry"],
+                1:["something","files"],
+            }
+        }
+    },
+    pranay:{
+        name: "Pranay Kumar",
+        email: "pranay@gmail.com",
+        tasks:{
+            personal:{
+                0:["milk","laundry"],
+                1:["something","files"]
+            },
+            work:{
+                0:["milk","laundry"],
+                1:["something","files"]
+            },
+            grocery: {
+                0:["milk","laundry"],
+                1:["something","files"],
+            }
+        }
+    },
+    shreekant:{
+        name: "Shree Kant",
+        email: "shreekant@gmail.com",
+        tasks:{
+            personal:{
+                0:["milk","laundry"],
+                1:["something","files"]
+            },
+            work:{
+                0:["milk","laundry"],
+                1:["something","files"]
+            },
+            grocery: {
+                0:["milk","laundry"],
+                1:["something","files"],
+            }
+        }
+    },
+
+};
+
+console.log(users);
+
+localStorage.setItem("allusers",JSON.stringify(users));
+
+
+
+
+
 window.onload = ()=> {
     // romoving the outline og  all buttons 
     var btnsArr = document.querySelectorAll("button")
@@ -37,11 +104,9 @@ window.onload = ()=> {
 //close notifications bar
 let close = document.getElementsByClassName('close')[0];
 let bannner = document.getElementById('banner');
+
 close.onclick = () => {
-    bannner.innerHTML = ""
-    bannner.style.width = "0px";
-    bannner.style.height = "0px";
-    bannner.style.padding = "0px";
+    bannner.style.display = "none";
 }
 
 function handleQuickTask(){
@@ -88,20 +153,17 @@ function handleQuickTask(){
 //     currentuserDetails
 // }
 //side bar collapse behaviour
+//on click on the pin in side bar the sidebar should be collapsed 
+// Add one camera icon and create task icon
+
 let pin = document.getElementById('pin');
 let sidebar = document.getElementById('side_bar');
 
-//on click on the pin in side bar the sidebar should be collapsed
 pin.addEventListener('click', () => {
-    // sidebar.style.height = "0"
-    let x = pin.getAttribute('class');
-    x = x+" text-dark";
-    pin.setAttribute("class" ,x);
+    
     
     sidebar.innerHTML ="";
-    let side_bar_class = sidebar.getAttribute('class');
-    side_bar_class = "col-1 bg-white";
-    sidebar.setAttribute("class",side_bar_class);
+    sidebar.style.width = "80px";
 
     sidebar.innerHTML = `
     <div class="row">
@@ -126,94 +188,66 @@ pin.addEventListener('click', () => {
 `
 });
 
-sidebar.addEventListener("mouseover",() => {
-
-
-})
-
-sidebar.addEventListener("mouseout", () => {
-
-})
-
-
 //Customized Greeting according to the time of login
 
-let users_name = "Pranay"
-let note = document.getElementById('note')
+let users_name = "Pranay kumar";
+let note = document.getElementById('note');
 // console.log(note.textContent)
 
 var time = new Date().getHours()
 
 if(time < 12) {
-    note.textContent = "Good Morning,  " +users_name
+    note.textContent = "Good Morning,  " +users_name;
 }
 else if( time < 17 ) {
-    note.textContent = "Good Afternoon,  " +users_name
+    note.textContent = "Good Afternoon,  " +users_name;
 }
 else {
-    note.textContent = "Good Evening,  " +users_name
+    note.textContent = "Good Evening,  " +users_name;
 }
 
 
-let users = {
-    chandra:{
-        name : "chandra",
-        email: "mouliofficial98@gmail.com",
-        tasks: {
-            personal:{
-                "25-11-2020":["milk","laundry"],
-                "26-11-2020":["something","files"]
-            },
-            work:{
-                "25-11-2020":["milk","laundry"],
-                "26-11-2020":["something","files"]
-            },
-            grocery: {
-                "25-11-2020":["milk","laundry"],
-                "26-11-2020":["something","files"],
-            }
-        }
-    },
-    pranay:{
-        name: "Pranay",
-        email: "pranay@gmail.com",
-        tasks:{
-            personal:{
-                "25-11-2020":["milk","laundry"],
-                "26-11-2020":["something","files"]
-            },
-            work:{
-                "25-11-2020":["milk","laundry"],
-                "26-11-2020":["something","files"]
-            },
-            grocery: {
-                "25-11-2020":["milk","laundry"],
-                "26-11-2020":["something","files"],
-            }
-        }
-    },
-    shreekant:{
-        name: "Shreekanth",
-        email: "shreekant@gmail.com",
-        tasks:{
-            personal:{
-                "25-11-2020":["milk","laundry"],
-                "26-11-2020":["something","files"]
-            },
-            work:{
-                "25-11-2020":["milk","laundry"],
-                "26-11-2020":["something","files"]
-            },
-            grocery: {
-                "25-11-2020":["milk","laundry"],
-                "26-11-2020":["something","files"],
-            }
-        }
-    },
+let input = document.getElementById('task-input');
+let add = document.getElementById("add_task");
 
-} 
 
-console.log(users)
+add.onclick = () => {
+    console.log(input.value);
+    handleQuickTask()
+}
 
-// localStorage.setItem("allusers",JSON.stringify(users))
 
+function handleQuickTask(){
+    var dayDivChild = document.getElementById("todayDivChild")
+    dayDivChild.style.marginBottom = "5px"
+    var dataTask = input.value
+
+    if(dataTask.length == 0){
+        return
+    }
+
+    // create a checkbox
+    var chekcbox  = document.createElement("input")
+    chekcbox.setAttribute("type","radio")
+    
+    chekcbox.style.width = "20px"
+    chekcbox.style.height = "20px"
+    chekcbox.style.marginRight= "10px"
+    
+    
+    chekcbox.style.float = "left"
+    var taskDiv = document.createElement("div")
+    var textDiv = document.createElement("div")
+    textDiv.innerHTML = dataTask
+    textDiv.style.width = "auto"
+    
+    taskDiv.style.padding = "8px"
+    taskDiv.style.margin = "20px 0px 20px 0px"
+    taskDiv.style.border = "2px solid pink"
+    taskDiv.style.borderRadius = "7px"
+    
+    taskDiv.appendChild(chekcbox)
+    taskDiv.appendChild(textDiv)
+    var todayDIv = document.getElementById("todayDiv")
+    todayDIv.appendChild(taskDiv)
+}
