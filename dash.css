@@ -15,12 +15,25 @@ body{
     border-radius: 50%;
     width: 24px;
     height: 24px;
-} 
+}
 
 #note {
     margin-left: 20px;
     margin-top: 20px;
     padding: 8px;
+}
+
+#banner {
+    background-color: rgb(6, 211, 156);
+    padding: 10px;
+}
+#side_bar {
+    height: 632px;
+}
+
+#welcome {
+    margin-left: 20px;
+    margin-top: 20px;
 }
 .card {
     margin-top:20px;
@@ -31,6 +44,14 @@ img{
 #input-item {
     transform: scaleX(1.1);
     /* margin-top: 100px; */
+}
+.vl {
+    border-left: 1px solid rgb(184, 183, 183);
+    height: 400px;    
+}
+.hl {
+    border-top: 1px solid rgb(184, 183, 183);
+    width: 100%;
 }
 
 .small_btns{
@@ -85,8 +106,8 @@ img{
 #scrolllinID{
     height: 314px;
     overflow-y: scroll;
-    /* width: 400px; */
+    width: auto;
 }
 #todayDivChild,#tomorrowDivChild,#UpcommingDivChild,#somedayDivChild{
-    margin-bottom: 50px;
-}
+    margin-bottom: 50px; 
+} 
