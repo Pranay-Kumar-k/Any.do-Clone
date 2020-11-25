@@ -4,16 +4,16 @@ let users = {
         email: "mouliofficial98@gmail.com",
         tasks: {
             personal:{
-                "25-11-2020":["milk","laundry"],
-                "26-11-2020":["something","files"]
+                0:["milk","laundry"],
+                1:["something","files"]
             },
             work:{
-                "25-11-2020":["milk","laundry"],
-                "26-11-2020":["something","files"]
+                0:["milk","laundry"],
+                1:["something","files"]
             },
             grocery: {
-                "25-11-2020":["milk","laundry"],
-                "26-11-2020":["something","files"],
+                0:["milk","laundry"],
+                1:["something","files"],
             }
         }
     },
@@ -22,16 +22,16 @@ let users = {
         email: "pranay@gmail.com",
         tasks:{
             personal:{
-                "25-11-2020":["milk","laundry"],
-                "26-11-2020":["something","files"]
+                0:["milk","laundry"],
+                1:["something","files"]
             },
             work:{
-                "25-11-2020":["milk","laundry"],
-                "26-11-2020":["something","files"]
+                0:["milk","laundry"],
+                1:["something","files"]
             },
             grocery: {
-                "25-11-2020":["milk","laundry"],
-                "26-11-2020":["something","files"],
+                0:["milk","laundry"],
+                1:["something","files"],
             }
         }
     },
@@ -40,16 +40,16 @@ let users = {
         email: "shreekant@gmail.com",
         tasks:{
             personal:{
-                "25-11-2020":["milk","laundry"],
-                "26-11-2020":["something","files"]
+                0:["milk","laundry"],
+                1:["something","files"]
             },
             work:{
-                "25-11-2020":["milk","laundry"],
-                "26-11-2020":["something","files"]
+                0:["milk","laundry"],
+                1:["something","files"]
             },
             grocery: {
-                "25-11-2020":["milk","laundry"],
-                "26-11-2020":["something","files"],
+                0:["milk","laundry"],
+                1:["something","files"],
             }
         }
     },
@@ -65,9 +65,9 @@ localStorage.setItem("allusers",JSON.stringify(users));
 
 
 //close notifications bar
-
 let close = document.getElementsByClassName('close')[0];
 let bannner = document.getElementById('banner');
+
 close.onclick = () => {
     bannner.style.display = "none";
 }
@@ -109,34 +109,32 @@ pin.addEventListener('click', () => {
 `
 });
 
-sidebar.addEventListener("mouseover",() => {
-    // sidebar.style.display = "none"
-    // sidebar.innerHTML = ``
-});
-
-sidebar.addEventListener("mouseout", () => {
-    
-    
-})
-
-
 //Customized Greeting according to the time of login
 
-let users_name = "Pranay kumar"
-let note = document.getElementById('note')
+let users_name = "Pranay kumar";
+let note = document.getElementById('note');
 // console.log(note.textContent)
 
 var time = new Date().getHours()
 
 if(time < 12) {
-    note.textContent = "Good Morning,  " +users_name
+    note.textContent = "Good Morning,  " +users_name;
 }
 else if( time < 17 ) {
-    note.textContent = "Good Afternoon,  " +users_name
+    note.textContent = "Good Afternoon,  " +users_name;
 }
 else {
-    note.textContent = "Good Evening,  " +users_name
+    note.textContent = "Good Evening,  " +users_name;
 }
 
 
+//taking task input from the user and append it to DOM 
+// update the local storage with user input
 
+let input = document.getElementById('task-input');
+let add = document.getElementById("add_task");
+
+
+add.onclick = () => {
+    
+}

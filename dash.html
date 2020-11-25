@@ -110,27 +110,33 @@
                                                                 </div>
                                                             </div>
 
-                                                            <div class="modal-body">
+                                                            <div class="modal-body" id="modal_btn_type">
                                                                 <button type="button" class="btn btn-block text-left btn-light m-1 p-1">Personal
-                                                                    <img src="https://cdn3.iconfinder.com/data/icons/flat-actions-icons-9/792/Tick_Mark_Dark-512.png" class="w-10 float-right" alt="">
+                                                                    <!-- <img src="https://cdn3.iconfinder.com/data/icons/flat-actions-icons-9/792/Tick_Mark_Dark-512.png" class="w-10 float-right" alt=""> -->
+                                                                    <input type="checkbox" name="Personal" class="float-right">
                                                                 </button>
                                                                 <div class="hl"></div>
+
                                                                 <button type="button" class="btn btn-block text-left btn-light m-1 p-1">Work
-                                                                <img src="https://cdn3.iconfinder.com/data/icons/flat-actions-icons-9/792/Tick_Mark_Dark-512.png" class="w-10 float-right" alt="">
-
+                                                                <!-- <img src="https://cdn3.iconfinder.com/data/icons/flat-actions-icons-9/792/Tick_Mark_Dark-512.png" class="w-10 float-right" alt=""> -->
+                                                                <input type="checkbox" class="float-right" name="work">
                                                                 </button>
                                                                 <div class="hl"></div>
-                                                                <button type="button" class="btn btn-block text-left btn-light m-1 p-1">Grocery list
-                                                                <img src="https://cdn3.iconfinder.com/data/icons/flat-actions-icons-9/792/Tick_Mark_Dark-512.png" class="w-10 float-right" alt="">
+                                                                    
 
-                                                                </button>                                                               
-                                                                
+                                                                <button type="button" class="btn btn-block text-left btn-light m-1 p-1">Grocery list
+                                                                <!-- <img src="https://cdn3.iconfinder.com/data/icons/flat-actions-icons-9/792/Tick_Mark_Dark-512.png" class="w-10 float-right" alt=""> -->
+                                                                <input type="checkbox" class="float-right" name="grocery">
+                                                            </button>                                                               
+                                                                    
                                                             </div>
-                                                          </div>
                                                         </div>
-                                                      </div>
+                                                    </div>
                                                 </div>
                                             </div>
+                                        </div>
+
+                                                                
                                             <div class="row">
                                                 <div class="col">
                                                     REMIND ME : 
@@ -184,7 +190,7 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                              <button type="button" class="btn btn-block text-primary font-weight-bolder btn-light">Add Task</button>
+                              <button type="button" class="btn btn-block text-primary font-weight-bolder btn-light" id="add_task">Add Task</button>
                             </div>
                           </div>
                         </div>
@@ -221,13 +227,12 @@
                 </div>
             </div>
             
-            
             <!-- To Do list menu -->
             <!-- right side content for todo list -->
             <div class="col-9">
                 <!-- first top two buttons for settings and go Premium -->
                 <div class="row">
-                    <div class="col-3.5 offset-lg-6 mt-3">
+                    <div class="col-3.5 offset-lg-7 mt-3">
                         <div class="bg-white rounded-pill">
                             <!-- settings -->
                             <button type="button" class="btn btn-outline-none bg-white rounded-pill">
@@ -254,7 +259,7 @@
                         </div>
                     </div>
 
-                    <div class="col-3 mt-3">
+                    <div class="col-2.5 mt-3">
                         <div class="col">
                             <button type="button" class="btn btn-outline-none bg-white text-info rounded-pill">
                                  Go Premium
