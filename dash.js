@@ -136,6 +136,7 @@ let add = document.getElementById("add_task");
 
 
 add.onclick = () => {
+    console.log(input.value);
     handleQuickTask()
 }
 

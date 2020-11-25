@@ -69,7 +69,6 @@
                                 <div class="container-fluid">
                                     <div class="row">
                                         <div class="col-8">
-            
                                             <div class="row">
                                                 <div class="col-12">
                                                     <form>
@@ -190,7 +189,7 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                              <button type="button" class="btn btn-block text-primary font-weight-bolder btn-light" id="add_task">Add Task</button>
+                              <button type="button" class="btn btn-block text-primary font-weight-bolder btn-light close" data-dismiss="modal" id="add_task">Add Task</button>
                             </div>
                           </div>
                         </div>
@@ -292,8 +291,8 @@
                     <div class="col-6">
                         <div class="card rounded-lg">
                             <div class="card-body">
-                                <div>
-                                    <h5 class="card-title font-weight-bold mb-5">Today
+                                <div id="todayDiv">
+                                    <h5 class="card-title font-weight-bold mb-5" id="todayDivChild">Today
                                         <div class="float-right bg-secondary rounded-circle p-1 text-white font-weight-normal">0</div>
                                     </h5>
                                 </div>
