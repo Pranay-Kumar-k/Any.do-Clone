@@ -12,7 +12,7 @@
 <body>
       
     <!-- Navigation notifications Bar -->
-    <div class="p-3 mb-2 text-white text-center" style="background-color: rgb(6, 211, 156);">
+    <div class="text-white text-center" id="banner">
         Any.do needs your permission to <ins>enable reminder and calendar notifications</ins>
         <button type="button" class="close" aria-label="Close">
             <span aria-hidden="true">&times;</span>
@@ -25,10 +25,10 @@
         <!-- user data Left side Bar-->
         <div class="row"> 
             <!-- Left Column User Profile and Data -->
-            <div class="col-3 bg-white overflow-hidden" id="user">
+            <div class="col-2.8 bg-white overflow-hidden pt-3" id="side_bar">
                 <!-- first row for name and image -->
-                <div class="row">
-                    <div class="col-3 mt-3">
+                <div class="row" >
+                    <div class="col-2 mt-3 ml-1">
                         <button class="border-dark rounded-circle bg-white">
                                 <svg width="24" height="24" viewBox="0 0 24 24">
                                     <g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" transform="translate(-.8)">
@@ -41,20 +41,154 @@
                         </button>
                     </div>
                     <!-- collapse PIN sidebar-->
-                    <div class="col-9">
-                        <button type="button" class="btn btn-outline-none font-weight-bolder">Pranay kumar</button>
-                        <p>Free Plan. <a href="#">Upgrade ?</a>
-                            <a class="btn btn-outline-light rounded-circle" id="pin" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                                <svg width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M21.407 10.779a.8.8 0 01-1.131 1.131l-.19-.19-4.87 4.468-1.21 3.538a1 1 0 01-1.653.383l-3.391-3.39-3.677 3.677a.8.8 0 01-1.131-1.132l3.676-3.677-3.1-3.1a1 1 0 01.39-1.655l3.552-1.189 4.446-4.892-.196-.195a.799.799 0 111.131-1.131l7.354 7.354zm-2.454-.192L14.25 5.884l-4.675 5.144-3.029 1.012 6.258 6.258 1.03-3.013 5.119-4.698z"></path></svg>
-                              </a>
+                    <div class="col-7.2 ml-2">
+                        <button type="button" class="btn btn-outline-none font-weight-bolder text-start">Pranay kumar</button>
+                        <p class="ml-2">Free Plan. <a href="#">Upgrade ?</a>
                         </p>
+                    </div>
+                    <div class="col-2.5">
+                        <a class="btn btn-outline-light rounded-circle text-primary" id="pin" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            <svg width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M21.407 10.779a.8.8 0 01-1.131 1.131l-.19-.19-4.87 4.468-1.21 3.538a1 1 0 01-1.653.383l-3.391-3.39-3.677 3.677a.8.8 0 01-1.131-1.132l3.676-3.677-3.1-3.1a1 1 0 01.39-1.655l3.552-1.189 4.446-4.892-.196-.195a.799.799 0 111.131-1.131l7.354 7.354zm-2.454-.192L14.25 5.884l-4.675 5.144-3.029 1.012 6.258 6.258 1.03-3.013 5.119-4.698z"></path></svg>
+                          </a>
                     </div>
                 </div>
                 <!-- create a task -->
                 <div class="row">
-                        <button type="button" class="btn btn-primary btn-block m-2 font-weight-bolder rounded-pill">
+                    <div class="col-10 m-3">
+                        <button type="button" class="btn btn-primary btn-block font-weight-bolder rounded-pill" data-toggle="modal" data-target="#exampleModal" id="create_task">
                         + create a task
                     </button>
+                    </div>
+                    
+                    
+                    <!-- modal for creating a task -->
+                    <div class="modal" id="exampleModal" tabindex="-1">
+                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                          <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-8">
+            
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <form>
+                                                        <div class="form-group">
+                                                        <input type="text" class="form-control form-control-lg font-weight-bold text-dark" id="task-input" placeholder="I want to...">
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+    
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <form>
+                                                        <div class="form-group">
+                                                            <label for="notes">NOTES</label>
+                                                            <input type="text" class="form-control text-dark" id="notes" placeholder="Insert your notes here">
+                                                          </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-0.2">
+                                            <div class="vl text-center"></div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="row">
+                                                <!-- small modal for selecting the type of task for listing -->
+                                                <div class="col">
+                                                    List:
+                                                    <p data-toggle="modal" data-target="#exampleModal1"><a href="#" class="text-decoration-none">Personal</a></p>
+
+                                                    <div class="modal fade" id="exampleModal1">
+                                                        <div class="modal-dialog modal-sm modal-dialog-centered">
+                                                          <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <div class="container-fluid">
+                                                                    <h6 class="modal-title font-weight-bold" id="exampleModalLabel">Move to...</h6>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="modal-body">
+                                                                <button type="button" class="btn btn-block text-left btn-light m-1 p-1">Personal
+                                                                    <img src="https://cdn3.iconfinder.com/data/icons/flat-actions-icons-9/792/Tick_Mark_Dark-512.png" class="w-10 float-right" alt="">
+                                                                </button>
+                                                                <div class="hl"></div>
+                                                                <button type="button" class="btn btn-block text-left btn-light m-1 p-1">Work
+                                                                <img src="https://cdn3.iconfinder.com/data/icons/flat-actions-icons-9/792/Tick_Mark_Dark-512.png" class="w-10 float-right" alt="">
+
+                                                                </button>
+                                                                <div class="hl"></div>
+                                                                <button type="button" class="btn btn-block text-left btn-light m-1 p-1">Grocery list
+                                                                <img src="https://cdn3.iconfinder.com/data/icons/flat-actions-icons-9/792/Tick_Mark_Dark-512.png" class="w-10 float-right" alt="">
+
+                                                                </button>                                                               
+                                                                
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    REMIND ME : 
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <button type="button" class="btn m-1 btn-block btn-light rounded-pill text-secondary">
+                                                        <svg width="24" class="float-left" height="24" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"></path><path fill="currentColor" stroke="currentColor" stroke-width=".5" d="M18.821 17.6H5.18c-.208 0-.379-.16-.379-.358 0-.197.17-.358.379-.358 1.53 0 2.274-1.405 2.274-4.295V8.295C7.453 5.926 9.493 4 12 4c2.508 0 4.547 1.926 4.547 4.295v4.294c0 2.89.743 4.295 2.274 4.295.208 0 .379.16.379.358 0 .198-.17.358-.379.358zM7.2 16.8h9.6c-1.128-1.14-1.128-3.347-1.128-4.235V8.329C15.672 6.383 14.025 4.8 12 4.8c-2.025 0-3.672 1.583-3.672 3.53v4.235c0 .888 0 3.096-1.128 4.235z"></path><path fill="currentColor" d="M9.6 19.2a2.4 2.4 0 1 0 4.8 0"></path></g></svg>
+                                                        Later Today</button>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col">
+                                                    <button type="button" class="btn m-1 btn-block btn-light rounded-pill text-secondary">
+                                                        <svg width="24" class="float-left" height="24" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"></path><path fill="currentColor" stroke="currentColor" stroke-width=".5" d="M18.821 17.6H5.18c-.208 0-.379-.16-.379-.358 0-.197.17-.358.379-.358 1.53 0 2.274-1.405 2.274-4.295V8.295C7.453 5.926 9.493 4 12 4c2.508 0 4.547 1.926 4.547 4.295v4.294c0 2.89.743 4.295 2.274 4.295.208 0 .379.16.379.358 0 .198-.17.358-.379.358zM7.2 16.8h9.6c-1.128-1.14-1.128-3.347-1.128-4.235V8.329C15.672 6.383 14.025 4.8 12 4.8c-2.025 0-3.672 1.583-3.672 3.53v4.235c0 .888 0 3.096-1.128 4.235z"></path><path fill="currentColor" d="M9.6 19.2a2.4 2.4 0 1 0 4.8 0"></path></g></svg>
+                                                        This Evening</button>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <button type="button" class="btn m-1 btn-block btn-light rounded-pill text-secondary">
+                                                        <svg width="24" class="float-left" height="24" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"></path><path fill="currentColor" stroke="currentColor" stroke-width=".5" d="M18.821 17.6H5.18c-.208 0-.379-.16-.379-.358 0-.197.17-.358.379-.358 1.53 0 2.274-1.405 2.274-4.295V8.295C7.453 5.926 9.493 4 12 4c2.508 0 4.547 1.926 4.547 4.295v4.294c0 2.89.743 4.295 2.274 4.295.208 0 .379.16.379.358 0 .198-.17.358-.379.358zM7.2 16.8h9.6c-1.128-1.14-1.128-3.347-1.128-4.235V8.329C15.672 6.383 14.025 4.8 12 4.8c-2.025 0-3.672 1.583-3.672 3.53v4.235c0 .888 0 3.096-1.128 4.235z"></path><path fill="currentColor" d="M9.6 19.2a2.4 2.4 0 1 0 4.8 0"></path></g></svg>
+                                                        Tomorrow</button>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <button type="button" class="btn m-1 btn-block btn-light rounded-pill text-secondary">
+                                                        <svg width="24" class="float-left" height="24" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"></path><path fill="currentColor" stroke="currentColor" stroke-width=".5" d="M18.821 17.6H5.18c-.208 0-.379-.16-.379-.358 0-.197.17-.358.379-.358 1.53 0 2.274-1.405 2.274-4.295V8.295C7.453 5.926 9.493 4 12 4c2.508 0 4.547 1.926 4.547 4.295v4.294c0 2.89.743 4.295 2.274 4.295.208 0 .379.16.379.358 0 .198-.17.358-.379.358zM7.2 16.8h9.6c-1.128-1.14-1.128-3.347-1.128-4.235V8.329C15.672 6.383 14.025 4.8 12 4.8c-2.025 0-3.672 1.583-3.672 3.53v4.235c0 .888 0 3.096-1.128 4.235z"></path><path fill="currentColor" d="M9.6 19.2a2.4 2.4 0 1 0 4.8 0"></path></g></svg>
+                                                        Next Week</button>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <button type="button" class="btn m-1 btn-block btn-light rounded-pill text-secondary">
+                                                        <svg width="24" class="float-left" height="24" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"></path><path fill="currentColor" stroke="currentColor" stroke-width=".5" d="M18.821 17.6H5.18c-.208 0-.379-.16-.379-.358 0-.197.17-.358.379-.358 1.53 0 2.274-1.405 2.274-4.295V8.295C7.453 5.926 9.493 4 12 4c2.508 0 4.547 1.926 4.547 4.295v4.294c0 2.89.743 4.295 2.274 4.295.208 0 .379.16.379.358 0 .198-.17.358-.379.358zM7.2 16.8h9.6c-1.128-1.14-1.128-3.347-1.128-4.235V8.329C15.672 6.383 14.025 4.8 12 4.8c-2.025 0-3.672 1.583-3.672 3.53v4.235c0 .888 0 3.096-1.128 4.235z"></path><path fill="currentColor" d="M9.6 19.2a2.4 2.4 0 1 0 4.8 0"></path></g></svg>
+                                                        Custom</button>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <button type="button" class="btn m-1 btn-block btn-light rounded-pill text-secondary">
+                                                        <svg width="24" class="float-left" height="24" viewBox="0 0 24 24"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-769.000000, -494.000000)" fill="currentColor" fill-rule="nonzero"><g id="Someday" transform="translate(769.000000, 494.000000)"><path d="M12,7.52109329 C16.7069192,7.52109329 20.5353535,11.4853286 20.5353535,16.3576946 L21.8484848,16.3576946 C21.8484848,10.7267403 17.4389899,6.16161616 12,6.16161616 C6.5610101,6.16161616 2.15151515,10.7267403 2.15151515,16.3576946 L3.46464646,16.3576946 C3.46464646,11.4853286 7.29373737,7.52109329 12,7.52109329 Z" id="Shape"></path><path d="M12,10.2400475 C15.2585354,10.2400475 17.9090909,12.9841521 17.9090909,16.3576946 L19.2222222,16.3576946 C19.2222222,12.2350802 15.9820707,8.88057041 12,8.88057041 C8.01792929,8.88057041 4.77777778,12.2350802 4.77777778,16.3576946 L6.09090909,16.3576946 C6.09090909,12.9841521 8.74212121,10.2400475 12,10.2400475 Z" id="Shape"></path><rect id="Rectangle-path" x="2.15151515" y="17.0374332" width="19.6958335" height="1"></rect></g></g></g></svg>
+                                                        Someday</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-block text-primary font-weight-bolder btn-light">Add Task</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                 </div>
 
                 <!-- calendar -->
@@ -133,13 +267,20 @@
 
                 <!-- welcome note for user -->
                 <div class="row">
-                    <div class="bg-white rounded-pill font-weight-bolder text-dark text-center" id="note">
-                        Good evening, Pranay Kumar. <span class="border border-secondary ml-3"></span> <button class="btn bg-white btn-outline-none">
-                            <svg width="24" height="24" viewBox="3 3 24 24"><circle cx="15" cy="15" r="8.28" fill="transparent" stroke="currentColor" stroke-width="1.6"></circle><path d="M17.43 12.625l-4.8 4.8m0-4.8l4.8 4.8" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"></path></svg>
-                        </button>
-                        <button class="btn bg-white btn-outline-none">
-                            <svg width="24" height="24" viewBox="0 0 24 24"><g fill="currentColor"><circle cx="11.76" cy="11.89" r="1"></circle><circle cx="15.29" cy="11.89" r="1"></circle><circle cx="8.24" cy="11.89" r="1"></circle></g><circle cx="12" cy="12" r="8.28" fill="transparent" stroke="currentColor" stroke-width="1.6"></circle></svg>
-                        </button>
+                    <div class="bg-white rounded-pill font-weight-bolder text-dark p-3" id="welcome">
+                        <div class="row">
+                            <div class="col-7 align-middle mt-1" id="note">Good evening, Pranay Kumar.</div>
+                            <div class="col-1 mt-2">
+                                <div class="vl" style="height: 25px;"></div>
+                            </div>
+                            <div class="col-2"><button class="btn bg-white btn-outline-none">
+                                <svg width="24" height="24" viewBox="3 3 24 24"><circle cx="15" cy="15" r="8.28" fill="transparent" stroke="currentColor" stroke-width="1.6"></circle><path d="M17.43 12.625l-4.8 4.8m0-4.8l4.8 4.8" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"></path></svg>
+                            </button></div>
+                             <div class="col-2"><button class="btn bg-white btn-outline-none rounded-pill">
+                                <svg width="24" height="24" viewBox="0 0 24 24"><g fill="currentColor"><circle cx="11.76" cy="11.89" r="1"></circle><circle cx="15.29" cy="11.89" r="1"></circle><circle cx="8.24" cy="11.89" r="1"></circle></g><circle cx="12" cy="12" r="8.28" fill="transparent" stroke="currentColor" stroke-width="1.6"></circle></svg>
+                            </button></div>
+                        </div>
+                        
                     </div>
                 </div>
 

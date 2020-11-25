@@ -2,15 +2,17 @@ body{
     
     background-image: url("https://cdn.pixabay.com/photo/2018/11/10/22/57/nature-3807667_1280.jpg");
 }
-
-#user {
-    transform: scaleY(1.03);
+#banner {
+    background-color: rgb(6, 211, 156);
+    padding: 10px;
+}
+#side_bar {
+    height: 632px;
 }
 
-#note {
+#welcome {
     margin-left: 20px;
     margin-top: 20px;
-    padding: 8px;
 }
 .card {
     margin-top:20px;
@@ -21,6 +23,14 @@ img{
 #input-item {
     transform: scaleX(1.1);
     /* margin-top: 100px; */
+}
+.vl {
+    border-left: 1px solid rgb(184, 183, 183);
+    height: 400px;    
+}
+.hl {
+    border-top: 1px solid rgb(184, 183, 183);
+    width: 100%;
 }
 
 
