@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="shortcut icon" href="/favicon.ico"> -->
+    <title>Any.do</title>
+    <link rel="stylesheet" href="dash.css">
+    <link rel="shortcut icon" href="https://www.any.do/v4/images/og-image.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+      
+    <!-- Navigation notifications Bar -->
+    <div class="p-3 mb-2 text-white text-center" style="background-color: rgb(6, 211, 156);">
+        Any.do needs your permission to <ins>enable reminder and calendar notifications</ins>
+        <button type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    
+    
+    <!-- Buttons are Taken from original source -->
+    <div class="container-fluid">
+        <!-- user data Left side Bar-->
+        <div class="row"> 
+            <!-- Left Column User Profile and Data -->
+            <div class="col-3 bg-white overflow-hidden" id="user">
+                <!-- first row for name and image -->
+                <div class="row">
+                    <div class="col-3 mt-3">
+                        <button class="border-dark rounded-circle bg-white">
+                                <svg width="24" height="24" viewBox="0 0 24 24">
+                                    <g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" transform="translate(-.8)">
+                                        <path d="M21.6 17.8a1.6 1.6 0 01-1.6 1.6H5.6A1.6 1.6 0 014 17.8V9a1.6 1.6 0 011.6-1.6h3.2L10.4 5h4.8l1.6 2.4H20A1.6 1.6 0 0121.6 9v8.8z">
+                                        </path>
+                                        <circle cx="12.8" cy="13" r="3.2">
+                                        </circle>
+                                    </g>
+                                </svg>
+                        </button>
+                    </div>
+                    <!-- collapse PIN sidebar-->
+                    <div class="col-9">
+                        <button type="button" class="btn btn-outline-none font-weight-bolder">Pranay kumar</button>
+                        <p>Free Plan. <a href="#">Upgrade ?</a>
+                            <a class="btn btn-outline-light rounded-circle" id="pin" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                <svg width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M21.407 10.779a.8.8 0 01-1.131 1.131l-.19-.19-4.87 4.468-1.21 3.538a1 1 0 01-1.653.383l-3.391-3.39-3.677 3.677a.8.8 0 01-1.131-1.132l3.676-3.677-3.1-3.1a1 1 0 01.39-1.655l3.552-1.189 4.446-4.892-.196-.195a.799.799 0 111.131-1.131l7.354 7.354zm-2.454-.192L14.25 5.884l-4.675 5.144-3.029 1.012 6.258 6.258 1.03-3.013 5.119-4.698z"></path></svg>
+                              </a>
+                        </p>
+                    </div>
+                </div>
+                <!-- create a task -->
+                <div class="row">
+                        <button type="button" class="btn btn-primary btn-block m-2 font-weight-bolder rounded-pill">
+                        + create a task
+                    </button>
+                </div>
+
+                <!-- calendar -->
+                <div class="row">
+                    <button type="button" class="btn btn-block p-1 ml-4"><h3 class="text-justify">Calendar</h3></button>
+                </div>
+
+                <!-- shortcuts -->
+                <div class="row">
+                    <h3 class="p-1 ml-4 mt-3">Shortcuts
+                        <button class="btn bg-light btn-outline-none rounded-circle text-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            <svg width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M7 14l5.4-5.4 5.4 5.4"></path></svg>
+                        </button></h3>
+                </div>
+
+                <!-- Lists -->
+                <div class="row">
+                    <h3 class="p-1 ml-4 mt-3">Lists
+                        <button class="btn bg-light btn-outline-none rounded-circle text-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        <svg width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M7 14l5.4-5.4 5.4 5.4"></path></svg>
+                      </button></h3>
+                </div>
+
+                <!-- tags -->
+                <div class="row">
+                    <h3 class="p-1 ml-4 mt-3">Tags
+                        <button class="btn bg-light btn-outline-none rounded-circle text-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        <svg width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M7 14l5.4-5.4 5.4 5.4"></path></svg>
+                      </button></h3>
+                </div>
+
+
+
+            </div>
+            
+            <!-- To Do list menu -->
+            <!-- right side content for todo list -->
+            <div class="col-9">
+                <!-- first top two buttons for settings and go Premium -->
+                <div class="row">
+                    <div class="col-3.5 offset-lg-4 mt-3" id="id2">
+                        <div class="bg-white rounded-pill">
+                            <!-- settings -->
+                            <button type="button" class="btn btn-outline-none bg-white rounded-pill" data-toggle="dropdown">
+                                <svg width="24" height="24" viewBox="0 0 24 24">
+                                    <g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6">
+                                        <circle cx="11.8" cy="11.8" r="2.4"></circle>
+                                        <path d="M17.72 14.2a1.32 1.32 0 00.264 1.456l.048.048a1.602 1.602 0 11-2.264 2.264l-.048-.048a1.32 1.32 0 00-1.456-.264 1.319 1.319 0 00-.8 1.208V19a1.6 1.6 0 11-3.2 0v-.072A1.32 1.32 0 009.4 17.72a1.32 1.32 0 00-1.456.264l-.048.048a1.602 1.602 0 11-2.264-2.264l.048-.048a1.32 1.32 0 00.264-1.456 1.319 1.319 0 00-1.208-.8H4.6a1.6 1.6 0 110-3.2h.072A1.32 1.32 0 005.88 9.4a1.32 1.32 0 00-.264-1.456l-.048-.048a1.602 1.602 0 112.264-2.264l.048.048a1.32 1.32 0 001.456.264H9.4c.484-.207.798-.682.8-1.208V4.6a1.6 1.6 0 113.2 0v.072c.002.526.316 1 .8 1.208a1.32 1.32 0 001.456-.264l.048-.048a1.602 1.602 0 112.264 2.264l-.048.048a1.32 1.32 0 00-.264 1.456V9.4c.207.484.682.798 1.208.8H19a1.6 1.6 0 110 3.2h-.072a1.32 1.32 0 00-1.208.8z"></path>
+                                    </g>
+                                </svg>
+                            </button>
+                            <!-- dropdown -->
+                              <div class="dropdown-menu w-25 mr-5 mt-2 p-1 rounded">
+                                  <h2 class="dropdown-header shadow w-100">Setting</h2>
+                                   <h4 class="dropdown-header mt-3 mr-2"><b>ACCOUNT</b></h4>
+                                    <a class="dropdown-item" href="#">My Profile 
+                                     <span class="float-right"><b>&#x3e;</b></span>
+                                     <hr>
+                                    </a>
+                                    <a class="dropdown-item" href="#">Integrations
+                                     <span class="float-right"><b>&#x3e;</b></span>
+                                     <hr>
+                                    </a>
+                                    <a class="dropdown-item" href="#">Import to Any.do
+                                     <span class="float-right"><b>&#x3e;</b></span>
+                                     <hr>
+                                    </a>
+                                   <h4 class="dropdown-header mt-1"><b>PREFERENCES</b></h4>
+                                </div> 
+                            <!-- dropdown -->
+
+                            <!-- sync -->
+                            <button type="button" class="btn btn-outline-none bg-white">
+                                <svg width="24" height="24" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M20.6 5.5v4.8h-4.8M3 18.3v-4.8h4.8"></path><path d="M5.008 9.5a7.199 7.199 0 0111.88-2.688L20.6 10.3M3 13.5l3.712 3.488a7.2 7.2 0 0011.88-2.688"></path></g></svg>
+                            </button>
+                            <!-- notifications -->
+                            <button type="button" class="btn btn-outline-none bg-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><rect width="14.4" height="14.4" x="5" y="5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" rx="1.6"></rect></g></svg>    
+                            </button>
+                            <!-- search -->
+                          <!--  <button type="button" class="btn btn-outline-none bg-white rounded-pill">
+                                <svg width="24" height="24" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="11.4" cy="11.4" r="6.4"></circle><path d="M19.4 19.4l-3.48-3.48"></path></g></svg>
+                            </button> -->
+
+                            <span id="id1" class="border-0">
+                              <input type="text" name="search" class="border-0" placeholder="Search for tasks, lists, etc’">
+                            </span>
+
+                        </div>
+                    </div>
+
+                    <div class="col-3 mt-3">
+                        <div class="col p-1">
+                            <button type="button" class="btn btn-outline-none bg-white text-info rounded-pill p-2">
+                                 Go Premium
+                                </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- welcome note for user -->
+                <div class="row">
+                    <div class="bg-white rounded-pill font-weight-bolder text-dark text-center" id="note">
+                        Good evening, Pranay Kumar. <span class="border border-secondary ml-3"></span> <button class="btn bg-white btn-outline-none">
+                            <svg width="24" height="24" viewBox="3 3 24 24"><circle cx="15" cy="15" r="8.28" fill="transparent" stroke="currentColor" stroke-width="1.6"></circle><path d="M17.43 12.625l-4.8 4.8m0-4.8l4.8 4.8" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"></path></svg>
+                        </button>
+                        <button class="btn bg-white btn-outline-none">
+                            <svg width="24" height="24" viewBox="0 0 24 24"><g fill="currentColor"><circle cx="11.76" cy="11.89" r="1"></circle><circle cx="15.29" cy="11.89" r="1"></circle><circle cx="8.24" cy="11.89" r="1"></circle></g><circle cx="12" cy="12" r="8.28" fill="transparent" stroke="currentColor" stroke-width="1.6"></circle></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- left column for adding the list items -->
+                <div class="row">
+                    <div class="col-6">
+                        <div class="card rounded-lg">
+                            <div class="card-body">
+                                <div>
+                                    <h5 class="card-title font-weight-bold mb-5">Today
+                                        <div class="float-right bg-secondary rounded-circle p-1 text-white font-weight-normal">0</div>
+                                    </h5>
+                                </div>
+                                <div>
+                                    <h5 class="card-title font-weight-bold mb-5">Tomorrow
+                                        <div class="float-right bg-secondary rounded-circle p-1 text-white font-weight-normal">0</div>
+                                    </h5>
+                                </div>
+                                <div>
+                                    <h5 class="card-title font-weight-bold mb-5">Upcoming
+                                        <div class="float-right bg-secondary rounded-circle p-1 text-white font-weight-normal">0</div>
+                                    </h5>
+                                </div>
+                                <div>
+                                    <h5 class="card-title font-weight-bold mb-5">Someday
+                                        <div class="float-right bg-secondary rounded-circle p-1 text-white font-weight-normal">0</div>
+                                    </h5>
+                                </div>
+                                
+                                <div class="card-footer shadow bg-white rounded" id="input-item">
+                                    <div class="row">
+                                        <div class="col-10">
+                                            <form>
+                                                <div class="form-group">
+                                                  <input type="text" class="form-control float-left rounded-pill" placeholder="click to quickly add a task">
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="col-2">
+                                            <button type="button" class="btn btn-primary rounded-circle text-light mt-3">
+                                                <svg width="15" height="17" viewBox="0 0 15 17"><path fill="currentColor" d="M8.438 3.563l4.593 4.593a.928.928 0 001.312-1.313L8.16.66a.933.933 0 00-1.32 0L.656 6.844a.928.928 0 001.312 1.313l4.595-4.594v10.504c0 .515.417.933.933.933h.008a.933.933 0 00.934-.933V3.563z"></path></svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                    </div>
+
+                    <!-- right column for sync with calendar -->
+                    <div class="col-6">
+                        <div class="card rounded-lg">
+                            <div class="card-body">
+                                <div class="card-title">
+                                   <h4 class="font-weight-bolder text-center mt-5">Sync Calendars</h4> 
+                                   <p class="text-muted text-center">Connect with Google Calendar to unleash your full power productivity and always stay in-sync.</p>
+                                   <button type="button" class="btn btn-primary btn-lg btn-block rounded-pill mb-5">
+                                    <g transform="translate(20.192 16.688)"><path fill="#4385F5" d="M9.544 13.746C8.162 12.655 6.78 11.564 5.4 10.472c-.12-.095-.228-.205-.34-.307.935-.724 1.716-1.58 2.229-2.668.204-.434.348-.887.484-1.346.094-.317.065-.44-.322-.437-2.3.02-4.6.01-6.901.01-.488 0-.488 0-.488-.51 0-1.581.007-3.162-.007-4.742C.052.167.104.05.443.052c4.243.012 8.486.009 12.73.003.229 0 .373.017.413.3.527 3.76.104 7.355-1.838 10.674-.595 1.016-1.31 1.944-2.204 2.717"></path></g>
+                                    <img src="https://img.icons8.com/color/452/google-logo.png" class="bg-white" alt="">
+                                    Connect with Google Calendar
+                                </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>   
+            </div>
+
+        </div>
+    </div>
+    <script type="text/javascript" src="dash.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+</body>
+</html>
