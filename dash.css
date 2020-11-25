@@ -2,12 +2,29 @@ body{
     
     background-image: url("https://cdn.pixabay.com/photo/2018/11/10/22/57/nature-3807667_1280.jpg");
 }
+
+#side_bar {
+    height: 630px;
+    overflow-y:scroll !important;
+}
+
+#collapse_btns{
+    margin-left: 9px;
+    padding: 0px 3px 3px 3px;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+}
+
+#note {
+    margin-left: 20px;
+    margin-top: 20px;
+    padding: 8px;
+}
+
 #banner {
     background-color: rgb(6, 211, 156);
     padding: 10px;
-}
-#side_bar {
-    height: 632px;
 }
 
 #welcome {
@@ -33,4 +50,60 @@ img{
     width: 100%;
 }
 
+.small_btns{
+    margin-left: 9px;
+    padding: 2px 3px 3px 3px;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    border: none;
+}
 
+.small_btns:hover{
+    opacity: 0.7;
+}
+
+#normal_hover:hover{
+    background-color: lightgrey;
+}
+
+.dummyText{
+    visibility: hidden;
+    line-height: 0px;
+}
+
+#cardEle{
+    border: none;
+}
+
+#maintaskBar{
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+#quickAddedTask{
+    border: 2px solid lightblue;
+    width: 85%;
+    padding:5px;
+    margin-left: 10px;
+}
+
+#taskAddbtn{
+    width: 38px;
+    height: 38px;
+    background: blue;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    margin-left: 10px;
+}
+
+#scrolllinID{
+    height: 314px;
+    overflow-y: scroll;
+    width: auto;
+}
+#todayDivChild,#tomorrowDivChild,#UpcommingDivChild,#somedayDivChild{
+    margin-bottom: 50px; 
+} 
