@@ -68,7 +68,7 @@ localStorage.setItem("allusers",JSON.stringify(users));
 window.onload = ()=> {
     // romoving the outline og  all buttons 
     var btnsArr = document.querySelectorAll("button")
-    console.log(btnsArr);
+    // console.log(btnsArr);
     for(var i=0;i<btnsArr.length;i++){
         btnsArr[i].addEventListener("click",function(){
             event.target.style.outline = "none"
@@ -77,7 +77,7 @@ window.onload = ()=> {
     
     // removing the outline of the all the input elements 
     var btnsArr = document.querySelectorAll("input")
-    console.log(btnsArr);
+    // console.log(btnsArr);
     for(var i=0;i<btnsArr.length;i++){
         btnsArr[i].addEventListener("click",function(){
             event.target.style.outline = "none"
@@ -213,16 +213,27 @@ let add = document.getElementById("add_task");
 
 add.onclick = () => {
     console.log(input.value);
-    handleQuickTask()
+    handleQuickTask(input.value)
+    input.value=""
 }
 
 
-function handleQuickTask(){
+var addTaskBtn = document.getElementById("taskAddbtn")
+var quickAddedTask = document.getElementById("quickAddedTask")
+
+
+addTaskBtn.onclick = () => {
+    console.log(quickAddedTask.value)
+    let value = quickAddedTask.value
+    handleQuickTask(value)
+}
+
+function handleQuickTask(value){
     var dayDivChild = document.getElementById("todayDivChild")
     dayDivChild.style.marginBottom = "5px"
-    var dataTask = input.value
+    
 
-    if(dataTask.length == 0){
+    if(value.length == 0){
         return
     }
 
@@ -238,7 +249,7 @@ function handleQuickTask(){
     chekcbox.style.float = "left"
     var taskDiv = document.createElement("div")
     var textDiv = document.createElement("div")
-    textDiv.innerHTML = dataTask
+    textDiv.innerHTML = value
     textDiv.style.width = "auto"
     
     taskDiv.style.padding = "8px"

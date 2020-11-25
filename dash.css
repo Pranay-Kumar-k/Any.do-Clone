@@ -67,10 +67,6 @@ img{
     background-color: lightgrey;
 }
 
-.dummyText{
-    visibility: hidden;
-    line-height: 0px;
-}
 
 #cardEle{
     border: none;
