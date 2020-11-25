@@ -48,15 +48,94 @@ pin.addEventListener('click', () => {
 `
 });
 
-sidebar.addEventListener("onmouseenter",() => {
+sidebar.addEventListener("mouseover",() => {
+
+
 })
-//creating a task from side bar
 
-let task = document.getElementById('create_task')
-let body = document.querySelector('body')
+sidebar.addEventListener("mouseout", () => {
 
-task.onclick = () => {
+})
+
+
+//Customized Greeting according to the time of login
+
+let users_name = "Pranay kumar"
+let note = document.getElementById('note')
+// console.log(note.textContent)
+
+var time = new Date().getHours()
+
+if(time < 12) {
+    note.textContent = "Good Morning,  " +users_name
+}
+else if( time < 17 ) {
+    note.textContent = "Good Afternoon,  " +users_name
+}
+else {
+    note.textContent = "Good Evening,  " +users_name
 }
 
 
-                            
+let users = {
+    chandra:{
+        name : "chandra Mouli",
+        email: "mouliofficial98@gmail.com",
+        tasks: {
+            personal:{
+                "25-11-2020":["milk","laundry"],
+                "26-11-2020":["something","files"]
+            },
+            work:{
+                "25-11-2020":["milk","laundry"],
+                "26-11-2020":["something","files"]
+            },
+            grocery: {
+                "25-11-2020":["milk","laundry"],
+                "26-11-2020":["something","files"],
+            }
+        }
+    },
+    pranay:{
+        name: "Pranay Kumar",
+        email: "pranay@gmail.com",
+        tasks:{
+            personal:{
+                "25-11-2020":["milk","laundry"],
+                "26-11-2020":["something","files"]
+            },
+            work:{
+                "25-11-2020":["milk","laundry"],
+                "26-11-2020":["something","files"]
+            },
+            grocery: {
+                "25-11-2020":["milk","laundry"],
+                "26-11-2020":["something","files"],
+            }
+        }
+    },
+    shreekant:{
+        name: "Shree Kant",
+        email: "shreekant@gmail.com",
+        tasks:{
+            personal:{
+                "25-11-2020":["milk","laundry"],
+                "26-11-2020":["something","files"]
+            },
+            work:{
+                "25-11-2020":["milk","laundry"],
+                "26-11-2020":["something","files"]
+            },
+            grocery: {
+                "25-11-2020":["milk","laundry"],
+                "26-11-2020":["something","files"],
+            }
+        }
+    },
+
+} 
+
+console.log(users)
+
+localStorage.setItem("allusers",JSON.stringify(users))
+
