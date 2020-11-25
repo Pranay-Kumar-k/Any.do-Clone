@@ -10,10 +10,9 @@ body{
     height: 632px;
 }
 
-#note {
+#welcome {
     margin-left: 20px;
     margin-top: 20px;
-    padding: 8px;
 }
 .card {
     margin-top:20px;
@@ -27,8 +26,11 @@ img{
 }
 .vl {
     border-left: 1px solid rgb(184, 183, 183);
-    height: 300px;
-    
-  }
+    height: 400px;    
+}
+.hl {
+    border-top: 1px solid rgb(184, 183, 183);
+    width: 100%;
+}
 
 
