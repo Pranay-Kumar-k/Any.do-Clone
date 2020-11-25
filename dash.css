@@ -8,6 +8,12 @@ body{
 }
 #side_bar {
     height: 632px;
+    overflow-y:scroll !important;
+}
+#left_card {
+    height: 400px;
+    overflow-y:scroll !important;
+    width: auto;
 }
 
 #welcome {
@@ -32,5 +38,25 @@ img{
     border-top: 1px solid rgb(184, 183, 183);
     width: 100%;
 }
+#collapse_btns{
+    margin-left: 9px;
+    padding: 0px 3px 3px 3px;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+}
+.small_btns{
+    margin-left: 9px;
+    padding: 2px 3px 3px 3px;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    border: none;
+}
 
-
+.count {
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    border-radius: 50%;
+}

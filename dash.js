@@ -136,17 +136,17 @@ let add = document.getElementById("add_task");
 
 
 add.onclick = () => {
-    console.log(input.value);
-    handleQuickTask()
+    // console.log(input.value);
+    handleQuickTask(input.value)
 }
 
 
-function handleQuickTask(){
+function handleQuickTask(value){
     var dayDivChild = document.getElementById("todayDivChild")
     dayDivChild.style.marginBottom = "5px"
-    var dataTask = input.value
+    
 
-    if(dataTask.length == 0){
+    if(value.length == 0){
         return
     }
 
@@ -162,7 +162,7 @@ function handleQuickTask(){
     chekcbox.style.float = "left"
     var taskDiv = document.createElement("div")
     var textDiv = document.createElement("div")
-    textDiv.innerHTML = dataTask
+    textDiv.innerHTML = value
     textDiv.style.width = "auto"
     
     taskDiv.style.padding = "8px"
@@ -174,8 +174,4 @@ function handleQuickTask(){
     taskDiv.appendChild(textDiv)
     var todayDIv = document.getElementById("todayDiv")
     todayDIv.appendChild(taskDiv)
-
-    // rendorDom()
-
-
 }

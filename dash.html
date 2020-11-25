@@ -198,31 +198,97 @@
 
                 <!-- calendar -->
                 <div class="row">
-                    <button type="button" class="btn btn-block p-1 ml-4"><h3 class="text-justify">Calendar</h3></button>
+                    <button type="button" class="btn btn-block p-1 ml-4"><h3 class="text-left">Calendar</h3></button>
                 </div>
 
                 <!-- shortcuts -->
                 <div class="row">
-                    <h3 class="p-1 ml-4 mt-3">Shortcuts
-                        <button class="btn bg-light btn-outline-none rounded-circle text-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                            <svg width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M7 14l5.4-5.4 5.4 5.4"></path></svg>
-                        </button></h3>
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <h4 class="ml-2 pl-1">Shortcuts
+                    
+                                <button id="collapse_btns" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample">
+                                    ^
+                                </button></h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="collapse" id="collapseExample">
+                                    <div id="cardEle" class="card card-body">
+                                        <div id="normal_hover">
+                                        <h5 class="float-left">Today</h5><button class="small_btns float-left" >0</button>
+                                        </div>
+                                        <div id="normal_hover">
+                                        <h5 class="float-left">Next 7 Days</h5><button class="small_btns float-left" >0</button>
+                                        </div>
+                                        <div id="normal_hover">
+                                        <h5 class="float-left">All Tasks</h5><button class="small_btns float-left" >0</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Lists -->
+                
                 <div class="row">
-                    <h3 class="p-1 ml-4 mt-3">Lists
-                        <button class="btn bg-light btn-outline-none rounded-circle text-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                        <svg width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M7 14l5.4-5.4 5.4 5.4"></path></svg>
-                      </button></h3>
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <h4 class="ml-2 pl-1">Lists
+                                <button id="collapse_btns" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample1">
+                                    ^
+                                </button></h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="collapse" id="collapseExample1">
+                                    <div id="cardEle" class="card card-body border-white">
+                                        <div id="normal_hover">
+                                        <h5 class="float-left">Personal</h5><button class="small_btns float-left" >0</button>
+                                        </div>
+                                        <div id="normal_hover">
+                                        <h5 class="float-left">Work</h5><button class="small_btns float-left" >0</button>
+                                        </div>
+                                        <div id="normal_hover">
+                                        <h5 class="float-left">Grocery List</h5><button class="small_btns float-left" >0</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- tags -->
                 <div class="row">
-                    <h3 class="p-1 ml-4 mt-3">Tags
-                        <button class="btn bg-light btn-outline-none rounded-circle text-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                        <svg width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M7 14l5.4-5.4 5.4 5.4"></path></svg>
-                      </button></h3>
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <h4 class="ml-2 pl-1">Tags
+                    
+                                <button id="collapse_btns" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+                                    ^
+                                </button></h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="collapse" id="collapseExample2">
+                                    <div id="cardEle" class="card card-body">
+                                        <div id="normal_hover" >
+                                        <h5 class="float-left">Priority</h5><button class="small_btns float-left" >0</button>
+                                        </div>                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -289,26 +355,26 @@
                 <!-- left column for adding the list items -->
                 <div class="row">
                     <div class="col-6">
-                        <div class="card rounded-lg">
+                        <div class="card rounded-lg" id="left_card">
                             <div class="card-body">
                                 <div id="todayDiv">
                                     <h5 class="card-title font-weight-bold mb-5" id="todayDivChild">Today
-                                        <div class="float-right bg-secondary rounded-circle p-1 text-white font-weight-normal">0</div>
+                                        <div class="float-right bg-secondary text-white font-weight-normal count">0</div>
                                     </h5>
                                 </div>
                                 <div>
                                     <h5 class="card-title font-weight-bold mb-5">Tomorrow
-                                        <div class="float-right bg-secondary rounded-circle p-1 text-white font-weight-normal">0</div>
+                                        <div class="float-right bg-secondary text-white font-weight-normal count">0</div>
                                     </h5>
                                 </div>
                                 <div>
                                     <h5 class="card-title font-weight-bold mb-5">Upcoming
-                                        <div class="float-right bg-secondary rounded-circle p-1 text-white font-weight-normal">0</div>
+                                        <div class="float-right bg-secondary text-white font-weight-normal count">0</div>
                                     </h5>
                                 </div>
                                 <div>
                                     <h5 class="card-title font-weight-bold mb-5">Someday
-                                        <div class="float-right bg-secondary rounded-circle p-1 text-white font-weight-normal">0</div>
+                                        <div class="float-right bg-secondary text-white font-weight-normal count">0</div>
                                     </h5>
                                 </div>
                                 
