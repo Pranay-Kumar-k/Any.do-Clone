@@ -334,17 +334,17 @@
                 </div>
 
                 <!-- welcome note for user -->
-                <div class="row">
-                    <div class="bg-white rounded-pill font-weight-bolder text-dark p-3" id="welcome">
+                <div class="row p-2">
+                    <div class="bg-white rounded-pill font-weight-bolder text-dark" id="welcome">
                         <div class="row">
-                            <div class="col-7 align-middle mt-1" id="note">Good evening, Pranay Kumar.</div>
+                            <div class="col-8 align-middle mt-1 ml-3" id="note"></div>
                             <div class="col-1 mt-2">
                                 <div class="vl" style="height: 25px;"></div>
                             </div>
-                            <div class="col-2"><button class="btn bg-white btn-outline-none">
+                            <div class="col-1"><button class="btn bg-white btn-outline-none">
                                 <svg width="24" height="24" viewBox="3 3 24 24"><circle cx="15" cy="15" r="8.28" fill="transparent" stroke="currentColor" stroke-width="1.6"></circle><path d="M17.43 12.625l-4.8 4.8m0-4.8l4.8 4.8" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"></path></svg>
                             </button></div>
-                             <div class="col-2"><button class="btn bg-white btn-outline-none rounded-pill">
+                             <div class="col-1"><button class="btn bg-white btn-outline-none rounded-pill">
                                 <svg width="24" height="24" viewBox="0 0 24 24"><g fill="currentColor"><circle cx="11.76" cy="11.89" r="1"></circle><circle cx="15.29" cy="11.89" r="1"></circle><circle cx="8.24" cy="11.89" r="1"></circle></g><circle cx="12" cy="12" r="8.28" fill="transparent" stroke="currentColor" stroke-width="1.6"></circle></svg>
                             </button></div>
                         </div>
@@ -359,41 +359,30 @@
                             <div class="card-body">
                                 <div id="todayDiv">
                                     <h5 class="card-title font-weight-bold mb-5" id="todayDivChild">Today
-                                        <div class="float-right bg-secondary text-white font-weight-normal count">0</div>
+                                        <div class="float-right bg-secondary text-white font-weight-normal count text-center">0</div>
                                     </h5>
                                 </div>
                                 <div>
                                     <h5 class="card-title font-weight-bold mb-5">Tomorrow
-                                        <div class="float-right bg-secondary text-white font-weight-normal count">0</div>
+                                        <div class="float-right bg-secondary text-white font-weight-normal count text-center">0</div>
                                     </h5>
                                 </div>
                                 <div>
                                     <h5 class="card-title font-weight-bold mb-5">Upcoming
-                                        <div class="float-right bg-secondary text-white font-weight-normal count">0</div>
+                                        <div class="float-right bg-secondary text-white font-weight-normal count text-center">0</div>
                                     </h5>
                                 </div>
                                 <div>
                                     <h5 class="card-title font-weight-bold mb-5">Someday
-                                        <div class="float-right bg-secondary text-white font-weight-normal count">0</div>
+                                        <div class="float-right bg-secondary text-white font-weight-normal count text-center">0</div>
                                     </h5>
                                 </div>
-                                
-                                <div class="card-footer shadow bg-white rounded" id="input-item">
-                                    <div class="row">
-                                        <div class="col-10">
-                                            <form>
-                                                <div class="form-group">
-                                                  <input type="text" class="form-control float-left rounded-pill" placeholder="click to quickly add a task">
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="col-2">
-                                            <button type="button" class="btn btn-primary rounded-circle text-light mt-3">
-                                                <svg width="15" height="17" viewBox="0 0 15 17"><path fill="currentColor" d="M8.438 3.563l4.593 4.593a.928.928 0 001.312-1.313L8.16.66a.933.933 0 00-1.32 0L.656 6.844a.928.928 0 001.312 1.313l4.595-4.594v10.504c0 .515.417.933.933.933h.008a.933.933 0 00.934-.933V3.563z"></path></svg>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
+                            </div>
+                            <div class="card-footer shadow-lg p-0 mb-0 bg-white rounded" >
+                                <input id="quickAddedTask" class="rounded-pill" type="text"placeholder="enter quick task here"  >
+                                <button id="taskAddbtn" type="button" class="btn btn-primary rounded-circle text-light mt-3 pt-1 pl-0 pr-0 ">
+                                    <svg class="" width="20" height="20" viewBox="0 0 15 17"><path fill="currentColor" d="M8.438 3.563l4.593 4.593a.928.928 0 001.312-1.313L8.16.66a.933.933 0 00-1.32 0L.656 6.844a.928.928 0 001.312 1.313l4.595-4.594v10.504c0 .515.417.933.933.933h.008a.933.933 0 00.934-.933V3.563z"></path></svg>
+                                </button>
                             </div>
                           </div>
                     </div>
