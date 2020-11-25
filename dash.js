@@ -5,15 +5,30 @@ let users = {
         tasks: {
             personal:{
                 0:["milk","laundry"],
-                1:["something","files"]
+                1:["something","files"],
+                2:["milk","laundry"],
+                3:["something","files"],
+                4:["milk","laundry"],
+                5:["something","files"],
+                6:["milk","laundry"],
             },
             work:{
                 0:["milk","laundry"],
-                1:["something","files"]
+                1:["something","files"],
+                2:["milk","laundry"],
+                3:["something","files"],
+                4:["milk","laundry"],
+                5:["something","files"],
+                6:["milk","laundry"],
             },
             grocery: {
                 0:["milk","laundry"],
                 1:["something","files"],
+                2:["milk","laundry"],
+                3:["something","files"],
+                4:["milk","laundry"],
+                5:["something","files"],
+                6:["milk","laundry"],
             }
         }
     },
@@ -23,15 +38,30 @@ let users = {
         tasks:{
             personal:{
                 0:["milk","laundry"],
-                1:["something","files"]
+                1:["something","files"],
+                2:["milk","laundry"],
+                3:["something","files"],
+                4:["milk","laundry"],
+                5:["something","files"],
+                6:["milk","laundry"],
             },
             work:{
                 0:["milk","laundry"],
-                1:["something","files"]
+                1:["something","files"],
+                2:["milk","laundry"],
+                3:["something","files"],
+                4:["milk","laundry"],
+                5:["something","files"],
+                6:["milk","laundry"],
             },
             grocery: {
                 0:["milk","laundry"],
                 1:["something","files"],
+                2:["milk","laundry"],
+                3:["something","files"],
+                4:["milk","laundry"],
+                5:["something","files"],
+                6:["milk","laundry"],
             }
         }
     },
@@ -41,86 +71,59 @@ let users = {
         tasks:{
             personal:{
                 0:["milk","laundry"],
-                1:["something","files"]
+                1:["something","files"],
+                2:["milk","laundry"],
+                3:["something","files"],
+                4:["milk","laundry"],
+                5:["something","files"],
+                6:["milk","laundry"],
             },
             work:{
                 0:["milk","laundry"],
-                1:["something","files"]
+                1:["something","files"],
+                2:["milk","laundry"],
+                3:["something","files"],
+                4:["milk","laundry"],
+                5:["something","files"],
+                6:["milk","laundry"],
             },
             grocery: {
                 0:["milk","laundry"],
                 1:["something","files"],
+                2:["milk","laundry"],
+                3:["something","files"],
+                4:["milk","laundry"],
+                5:["something","files"],
+                6:["milk","laundry"],
             }
         }
     },
 
 };
 
-console.log(users);
 
-localStorage.setItem("allusers",JSON.stringify(users));
-
-
-
-
-
-window.onload = ()=> {
-    // romoving the outline og  all buttons 
-    var btnsArr = document.querySelectorAll("button")
-    // console.log(btnsArr);
-    for(var i=0;i<btnsArr.length;i++){
-        btnsArr[i].addEventListener("click",function(){
-            event.target.style.outline = "none"
-        })
-    }
+let side_bar_today = document.querySelector(".today")
+let dayDivChild = document.getElementById("todayDivChild")
+let main_today_count = document.querySelector("#todayDivChild > .count")
+var todayDIv = document.getElementById("todayDiv")
+let name = document.getElementById('name')
+//Customized Greeting according to the time of login
+window.onload = () => {
     
-    // removing the outline of the all the input elements 
-    var btnsArr = document.querySelectorAll("input")
-    // console.log(btnsArr);
-    for(var i=0;i<btnsArr.length;i++){
-        btnsArr[i].addEventListener("click",function(){
-            event.target.style.outline = "none"
-        })
-    }
+    let user = users.pranay
+    let today = new Date().getDay()
+    let users_name = user.name
 
-    // var currentUserName = JSON.parse(localStorage.get("currentUser"))
+    name.textContent = users_name
+    // console.log(name.textContent)
+
+    side_bar_today.textContent = user.tasks.personal[today].length
+    main_today_count.textContent = side_bar_today.textContent
     
-    // var allUsers = JSON.parse(localStorage.get("all_users"))
-
-    // var currentuserDetails = allUsers.currentUserName
-
-    // rendorDom()
-
-    var addTaskBtn = document.getElementById("taskAddbtn")
-        addTaskBtn.addEventListener("click", handleQuickTask )
-    // let pin = document.getElementById('pin')
-    // pin.addEventListener('click', () => {
-        
-    //     let sidebar = document.getElementById('user')
-    //     sidebar.style.height = "0"
-    // })
-}
-//close notifications bar
-let close = document.getElementsByClassName('close')[0];
-let bannner = document.getElementById('banner');
-
-close.onclick = () => {
-    bannner.style.display = "none";
-}
-
-function handleQuickTask(){
-    var quickAddedTask = document.getElementById("quickAddedTask")
-    var dayDivChild = document.getElementById("todayDivChild")
-    dayDivChild.style.marginBottom = "5px"
-    var dataTask = quickAddedTask.value
-
-    if(dataTask.length == 0){
-        return
-    }
-
-    // create a checkbox
-    var chekcbox  = document.createElement("input")
-    chekcbox.setAttribute("type","radio")
+    for(var i=user.tasks.personal[today].length-1; i>=0 ; i--) {
+        // console.log(user.tasks.personal[today][i])
+        var chekcbox  = document.createElement("input")
+        chekcbox.setAttribute("type","radio")
     
     chekcbox.style.width = "20px"
     chekcbox.style.height = "20px"
@@ -130,7 +133,8 @@ function handleQuickTask(){
     chekcbox.style.float = "left"
     var taskDiv = document.createElement("div")
     var textDiv = document.createElement("div")
-    textDiv.innerHTML = dataTask
+    textDiv.innerHTML = user.tasks.personal[today][i]
+    // console.log(textDiv.textContent)
     textDiv.style.width = "auto"
     
     taskDiv.style.padding = "8px"
@@ -140,17 +144,50 @@ function handleQuickTask(){
     
     taskDiv.appendChild(chekcbox)
     taskDiv.appendChild(textDiv)
-    var todayDIv = document.getElementById("todayDiv")
     todayDIv.appendChild(taskDiv)
+    }
 
-    // rendorDom()
 
 
+
+    console.log(users_name)
+    
+    let note = document.getElementById('note');
+    
+    var time = new Date().getHours()
+    
+    if(time < 12) {
+        note.textContent = "Good Morning,  " +users_name;
+    }
+    else if( time < 17 ) {
+        note.textContent = "Good Afternoon,  " +users_name;
+    }
+    else {
+        note.textContent = "Good Evening,  " +users_name;
+    }
+
+    // console.log(users);
+    
+    localStorage.setItem("allusers",JSON.stringify(users));
 }
 
-// function rendorDom(){
-//     currentuserDetails
-// }
+
+//adding task 
+
+var addTaskBtn = document.getElementById("taskAddbtn")
+    addTaskBtn.addEventListener("click", handleQuickTask )
+
+
+//close notifications bar
+let close = document.getElementsByClassName('close')[0];
+let bannner = document.getElementById('banner');
+close.onclick = () => {
+    bannner.style.display = "none";
+}
+
+
+
+
 //side bar collapse behaviour
 //on click on the pin in side bar the sidebar should be collapsed 
 // Add one camera icon and create task icon
@@ -187,27 +224,8 @@ pin.addEventListener('click', () => {
 `
 });
 
-//Customized Greeting according to the time of login
-window.onload = () => {
-    let users_name = "Pranay kumar";
-    let note = document.getElementById('note');
-    console.log(note.textContent)
-    
-    var time = new Date().getHours()
-    
-    if(time < 12) {
-        note.textContent = "Good Morning,  " +users_name;
-    }
-    else if( time < 17 ) {
-        note.textContent = "Good Afternoon,  " +users_name;
-    }
-    else {
-        note.textContent = "Good Evening,  " +users_name;
-    }
 
-}
-
-
+///on click add task button in modal task is added to the task list
 let input = document.getElementById('task-input');
 let add = document.getElementById("add_task");
 
@@ -226,16 +244,35 @@ addTaskBtn.onclick = () => {
     console.log(quickAddedTask.value)
     let value = quickAddedTask.value
     handleQuickTask(value)
+
+    let personal_task = user.tasks.personal
+    let day = new Date().getDay()
+
+
+    console.log(personal_task[day].push(value))
+
+    localStorage.setItem("allusers",JSON.stringify(users));
+
 }
 
-function handleQuickTask(value){
-    var dayDivChild = document.getElementById("todayDivChild")
-    dayDivChild.style.marginBottom = "5px"
-    
 
+
+
+
+function handleQuickTask(value){
+    
+    
+    dayDivChild.style.marginBottom = "5px"
+    let count  = Number(document.querySelector("#todayDivChild > .count").textContent)
+    let today_count = Number(document.querySelector(".today").textContent)
+    
+    document.querySelector("#todayDivChild > .count").textContent = count+1
+    document.querySelector(".today").textContent = today_count+1
+    
     if(value.length == 0){
         return
     }
+    
 
     // create a checkbox
     var chekcbox  = document.createElement("input")
@@ -261,4 +298,6 @@ function handleQuickTask(value){
     taskDiv.appendChild(textDiv)
     var todayDIv = document.getElementById("todayDiv")
     todayDIv.appendChild(taskDiv)
+
+
 }

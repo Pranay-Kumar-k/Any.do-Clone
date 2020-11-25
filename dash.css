@@ -13,6 +13,7 @@ body{
     width: auto;
 }
 
+
 #banner {
     background-color: rgb(6, 211, 156);
     padding: 10px;
@@ -43,7 +44,7 @@ img{
     width: 24px;
     height: 24px;
 }
-.count{
+.small_btns{
     margin-left: 9px;
     padding: 2px 3px 3px 3px;
     border-radius: 50%;
@@ -52,7 +53,7 @@ img{
     border: none;
 }
 
-.count:hover{
+.small_btns:hover{
     opacity: 0.7;
 }
 
@@ -65,7 +66,7 @@ img{
     border: none;
 }
 
-#maintaskBar{
+.count{
     width: 25px;
     height: 25px;
     text-align: center;
