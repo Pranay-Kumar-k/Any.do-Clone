@@ -1,4 +1,3 @@
-
 let users = {
     chandra:{
         name : "chandra Mouli",
@@ -189,21 +188,23 @@ pin.addEventListener('click', () => {
 });
 
 //Customized Greeting according to the time of login
+window.onload = () => {
+    let users_name = "Pranay kumar";
+    let note = document.getElementById('note');
+    console.log(note.textContent)
+    
+    var time = new Date().getHours()
+    
+    if(time < 12) {
+        note.textContent = "Good Morning,  " +users_name;
+    }
+    else if( time < 17 ) {
+        note.textContent = "Good Afternoon,  " +users_name;
+    }
+    else {
+        note.textContent = "Good Evening,  " +users_name;
+    }
 
-let users_name = "Pranay kumar";
-let note = document.getElementById('note');
-// console.log(note.textContent)
-
-var time = new Date().getHours()
-
-if(time < 12) {
-    note.textContent = "Good Morning,  " +users_name;
-}
-else if( time < 17 ) {
-    note.textContent = "Good Afternoon,  " +users_name;
-}
-else {
-    note.textContent = "Good Evening,  " +users_name;
 }
 
 
@@ -212,9 +213,8 @@ let add = document.getElementById("add_task");
 
 
 add.onclick = () => {
-    console.log(input.value);
+    // console.log(input.value);
     handleQuickTask(input.value)
-    input.value=""
 }
 
 

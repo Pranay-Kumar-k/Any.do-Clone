@@ -4,22 +4,13 @@ body{
 }
 
 #side_bar {
-    height: 630px;
+    height: 632px;
     overflow-y:scroll !important;
 }
-
-#collapse_btns{
-    margin-left: 9px;
-    padding: 0px 3px 3px 3px;
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-}
-
-#note {
-    margin-left: 20px;
-    margin-top: 20px;
-    padding: 8px;
+#left_card {
+    height: 400px;
+    overflow-y:scroll !important;
+    width: auto;
 }
 
 #banner {
@@ -45,8 +36,14 @@ img{
     border-top: 1px solid rgb(184, 183, 183);
     width: 100%;
 }
-
-.small_btns{
+#collapse_btns{
+    margin-left: 9px;
+    padding: 0px 3px 3px 3px;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+}
+.count{
     margin-left: 9px;
     padding: 2px 3px 3px 3px;
     border-radius: 50%;
@@ -55,7 +52,7 @@ img{
     border: none;
 }
 
-.small_btns:hover{
+.count:hover{
     opacity: 0.7;
 }
 
