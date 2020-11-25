@@ -136,5 +136,45 @@ let add = document.getElementById("add_task");
 
 
 add.onclick = () => {
+    handleQuickTask()
+}
+
+
+function handleQuickTask(){
+    var dayDivChild = document.getElementById("todayDivChild")
+    dayDivChild.style.marginBottom = "5px"
+    var dataTask = input.value
+
+    if(dataTask.length == 0){
+        return
+    }
+
+    // create a checkbox
+    var chekcbox  = document.createElement("input")
+    chekcbox.setAttribute("type","radio")
     
+    chekcbox.style.width = "20px"
+    chekcbox.style.height = "20px"
+    chekcbox.style.marginRight= "10px"
+    
+    
+    chekcbox.style.float = "left"
+    var taskDiv = document.createElement("div")
+    var textDiv = document.createElement("div")
+    textDiv.innerHTML = dataTask
+    textDiv.style.width = "auto"
+    
+    taskDiv.style.padding = "8px"
+    taskDiv.style.margin = "20px 0px 20px 0px"
+    taskDiv.style.border = "2px solid pink"
+    taskDiv.style.borderRadius = "7px"
+    
+    taskDiv.appendChild(chekcbox)
+    taskDiv.appendChild(textDiv)
+    var todayDIv = document.getElementById("todayDiv")
+    todayDIv.appendChild(taskDiv)
+
+    // rendorDom()
+
+
 }
