@@ -14,6 +14,10 @@ A clone of Any.do To-Do List app created using bootstrap v4.5, HTML5, CSS3, java
 Its simple clone of application called Any.do to-do list app.
 
 ## Screenshots
+![Home page]()
+![Signup page]()
+![dashboard]()
+![dashboard]()
 
 
 ## Technologies
@@ -30,7 +34,7 @@ It's simple, first need to start this app by running Home.html file.
 * We can tasks for today by using the `add quick task` chat box
 * We can see list of tasks which are available for today
 * We can also create a task by using `create task` button 
-* If we are done with task then, we can remove the task from the `today`' tasks list
+* If we are done with task then, we can remove the task from the `today` tasks list
 
 ## Status
 * We need to add more features which are present in official Any.do to-do list app
