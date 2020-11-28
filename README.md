@@ -11,7 +11,7 @@ A clone of Any.do To-Do List app created using bootstrap v4.5, HTML5, CSS3, java
 
 
 ## General info
-Its simple clone of application called Any.do to-do list app.
+Any.do is a productivity platform designed to help people stay organized and get more done. The Any.do Moment prompts users to make a habit of morning task planning. Any.do extended its offering beyond its original to do list / task management functionality with a built in calendar, and a personal assistant service that can complete the user's tasks.
 
 ## Screenshots
 ![Home page](https://github.com/pranaykumar999/Any.do-Clone/blob/main/screenshots/home_page.png)
@@ -31,7 +31,9 @@ Project is created with:
 It's simple, first need to start this app by running Home.html file.
 
 ## Features
-* We can tasks for today by using the `add quick task` chat box.
+* Create, edit, delete tasks and lists.
+* Real-time sync across all of a user's devices.
+* Integrates with phone calendar and Facebook calendar
 * We can see list of tasks which are available for today.
 * We can also create a task by using `create task` button.
 * If we are done with task then, we can remove the task from the `today` tasks list.
