@@ -1,40 +1,32 @@
 body{
-    
     background-image: url("https://cdn.pixabay.com/photo/2018/11/10/22/57/nature-3807667_1280.jpg");
 }
 
-#user {
-    height: 630px;
-    overflow-y:scroll;
-    transform: scaleY(1.03);
-}
-
-#collapse_btns{
-    margin-left: 9px;
-    padding: 0px 3px 3px 3px;
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-}
-
-#note {
+#welcome_note {
     margin-left: 20px;
-    margin-top: 20px;
     padding: 8px;
-}
-
-#banner {
-    background-color: rgb(6, 211, 156);
-    padding: 10px;
-}
-#side_bar {
-    height: 632px;
 }
 
 #welcome {
     margin-left: 20px;
     margin-top: 20px;
+ 
 }
+
+#side_bar {
+    height: 632px;
+    overflow-y:scroll !important;
+}
+#left_card {
+    overflow-y:scroll !important;
+}
+
+
+#banner {
+    background-color: rgb(6, 211, 156);
+    padding: 10px;
+}
+
 .card {
     margin-top:20px;
 }
@@ -47,13 +39,19 @@ img{
 }
 .vl {
     border-left: 1px solid rgb(184, 183, 183);
-    height: 400px;    
+    height: 25px;    
 }
 .hl {
     border-top: 1px solid rgb(184, 183, 183);
     width: 100%;
 }
-
+#collapse_btns{
+    margin-left: 9px;
+    padding: 0px 3px 3px 3px;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+}
 .small_btns{
     margin-left: 9px;
     padding: 2px 3px 3px 3px;
@@ -71,16 +69,12 @@ img{
     background-color: lightgrey;
 }
 
-.dummyText{
-    visibility: hidden;
-    line-height: 0px;
-}
 
 #cardEle{
     border: none;
 }
 
-#maintaskBar{
+.count{
     width: 25px;
     height: 25px;
     text-align: center;
@@ -112,7 +106,14 @@ img{
 #todayDivChild,#tomorrowDivChild,#UpcommingDivChild,#somedayDivChild{
     margin-bottom: 50px; 
 } 
-
+#cal,#left_card {
+    height: 362px;
+    border-radius: 3% !important;
+    width: auto;
+}
+#sync {
+    margin-top: 100px;
+}
 #quicktaskCard{
     border-radius: 15px;
 }
@@ -155,3 +156,9 @@ img{
 input, button{
     outline: none;
 }
+input {
+    outline: none;
+}
+
+
+/* todaydivchild,   maintaskbar  */

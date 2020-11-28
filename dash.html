@@ -23,7 +23,7 @@
     <!-- Buttons are Taken from original source -->
     <div class="container-fluid">
         <!-- user data Left side Bar-->
-        <div class="row "> 
+        <div class="row"> 
             <!-- Left Column User Profile and Data -->
             <div class="col-2.8 bg-white overflow-hidden pt-3" id="side_bar">
                 <!-- first row for name and image -->
@@ -42,7 +42,7 @@
                     </div>
                     <!-- collapse PIN sidebar-->
                     <div class="col-7.2 ml-2">
-                        <button type="button" class="btn btn-outline-none font-weight-bolder text-start">Pranay kumar</button>
+                        <button type="button" class="btn btn-outline-none font-weight-bolder text-start" id="name"></button>
                         <p class="ml-2">Free Plan. <a href="#">Upgrade ?</a>
                         </p>
                     </div>
@@ -69,7 +69,6 @@
                                 <div class="container-fluid">*
                                     <div class="row">
                                         <div class="col-8">
-            
                                             <div class="row">
                                                 <div class="col-12">
                                                     <form>
@@ -110,27 +109,33 @@
                                                                 </div>
                                                             </div>
 
-                                                            <div class="modal-body">
+                                                            <div class="modal-body" id="modal_btn_type">
                                                                 <button type="button" class="btn btn-block text-left btn-light m-1 p-1">Personal
-                                                                    <img src="https://cdn3.iconfinder.com/data/icons/flat-actions-icons-9/792/Tick_Mark_Dark-512.png" class="w-10 float-right" alt="">
+                                                                    <!-- <img src="https://cdn3.iconfinder.com/data/icons/flat-actions-icons-9/792/Tick_Mark_Dark-512.png" class="w-10 float-right" alt=""> -->
+                                                                    <input type="checkbox" name="Personal" class="float-right">
                                                                 </button>
                                                                 <div class="hl"></div>
+
                                                                 <button type="button" class="btn btn-block text-left btn-light m-1 p-1">Work
-                                                                <img src="https://cdn3.iconfinder.com/data/icons/flat-actions-icons-9/792/Tick_Mark_Dark-512.png" class="w-10 float-right" alt="">
-
+                                                                <!-- <img src="https://cdn3.iconfinder.com/data/icons/flat-actions-icons-9/792/Tick_Mark_Dark-512.png" class="w-10 float-right" alt=""> -->
+                                                                <input type="checkbox" class="float-right" name="work">
                                                                 </button>
                                                                 <div class="hl"></div>
-                                                                <button type="button" class="btn btn-block text-left btn-light m-1 p-1">Grocery list
-                                                                <img src="https://cdn3.iconfinder.com/data/icons/flat-actions-icons-9/792/Tick_Mark_Dark-512.png" class="w-10 float-right" alt="">
+                                                                    
 
-                                                                </button>                                                               
-                                                                
+                                                                <button type="button" class="btn btn-block text-left btn-light m-1 p-1">Grocery list
+                                                                <!-- <img src="https://cdn3.iconfinder.com/data/icons/flat-actions-icons-9/792/Tick_Mark_Dark-512.png" class="w-10 float-right" alt=""> -->
+                                                                <input type="checkbox" class="float-right" name="grocery">
+                                                            </button>                                                               
+                                                                    
                                                             </div>
-                                                          </div>
                                                         </div>
-                                                      </div>
+                                                    </div>
                                                 </div>
                                             </div>
+                                        </div>
+
+                                                                
                                             <div class="row">
                                                 <div class="col">
                                                     REMIND ME : 
@@ -184,7 +189,7 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                              <button type="button" class="btn btn-block text-primary font-weight-bolder btn-light">Add Task</button>
+                              <button type="button" class="btn btn-block text-primary font-weight-bolder btn-light close" data-dismiss="modal" id="add_task">Add Task</button>
                             </div>
                           </div>
                         </div>
@@ -192,18 +197,18 @@
                 </div>
 
                 <!-- calendar -->
-                <div class="row">
+                <div class="row mb-3">
                     <button type="button" class="btn btn-block p-1 ml-4"><h3 class="text-left">Calendar</h3></button>
                 </div>
 
                 <!-- shortcuts -->
-                <div class="row">
+                <div class="row mb-3">
                     <div class="col">
                         <div class="row">
                             <div class="col">
                                 <h4 class="ml-2 pl-1">Shortcuts
                     
-                                <button id="collapse_btns" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                <button id="collapse_btns" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample">
                                     ^
                                 </button></h4>
                             </div>
@@ -213,21 +218,14 @@
                                 <div class="collapse" id="collapseExample">
                                     <div id="cardEle" class="card card-body">
                                         <div id="normal_hover">
-
-                                            <!-- here created new id to get the details of todays tasks when user clicks-->
-                                            <h5 id="today" class="float-left">To Day</h5><button class="small_btns float-left" >0</button>
+                                        <h5 class="float-left" id="today">Today</h5><button class="small_btns float-left today">0</button>
                                         </div>
                                         <div id="normal_hover">
-
-                                            <!-- here created new id to get the details of next 7 days tasks when user clicks-->
-                                            <h5 id="nextSevendays" class="float-left">Next 7 Days</h5><button class="small_btns float-left" >0</button>
+                                        <h5 class="float-left" id="nextSevendays">Next 7 Days</h5><button class="small_btns float-left" >0</button>
                                         </div>
                                         <div id="normal_hover">
-
-                                            <!-- here created new id to get the details of all tasks when user clicks-->
-                                            <h5 id="allTasks" class="float-left">All Tasks</h5><button class="small_btns float-left" >0</button>
+                                        <h5 class="float-left" id="allTasks">All Tasks</h5><button class="small_btns float-left" >0</button>
                                         </div>
-                                        
                                     </div>
                                 </div>
                             </div>
@@ -237,13 +235,12 @@
 
                 <!-- Lists -->
                 
-                <div class="row">
+                <div class="row mb-3">
                     <div class="col">
                         <div class="row">
                             <div class="col">
                                 <h4 class="ml-2 pl-1">Lists
-                    
-                                <button id="collapse_btns" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
+                                <button id="collapse_btns" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample1">
                                     ^
                                 </button></h4>
                             </div>
@@ -251,7 +248,7 @@
                         <div class="row">
                             <div class="col">
                                 <div class="collapse" id="collapseExample1">
-                                    <div id="cardEle" class="card card-body">
+                                    <div id="cardEle" class="card card-body border-white">
                                         <div id="normal_hover">
                                         <h5 class="float-left">Personal</h5><button class="small_btns float-left" >0</button>
                                         </div>
@@ -261,7 +258,6 @@
                                         <div id="normal_hover">
                                         <h5 class="float-left">Grocery List</h5><button class="small_btns float-left" >0</button>
                                         </div>
-                                        
                                     </div>
                                 </div>
                             </div>
@@ -270,7 +266,7 @@
                 </div>
 
                 <!-- tags -->
-                <div class="row">
+                <div class="row mb-3">
                     <div class="col">
                         <div class="row">
                             <div class="col">
@@ -301,7 +297,7 @@
             <div class="col-9">
                 <!-- first top two buttons for settings and go Premium -->
                 <div class="row">
-                    <div class="col-3.5 offset-lg-6 mt-3">
+                    <div class="col-3.5 offset-lg-7 mt-3">
                         <div class="bg-white rounded-pill">
                             <!-- settings -->
                             <!-- <button onclick="handleSignout()" type="button" class="btn btn-outline-none bg-white rounded-pill">Signout
@@ -343,7 +339,7 @@
                         </div>
                     </div>
 
-                    <div class="col-3 mt-3">
+                    <div class="col-2.5 mt-3">
                         <div class="col">
                             <button type="button" class="btn btn-outline-none bg-white text-info rounded-pill">
                                  Go Premium
@@ -353,17 +349,17 @@
                 </div>
 
                 <!-- welcome note for user -->
-                <div class="row pl-4 mt-5">
-                    <div class="bg-white rounded-pill font-weight-bolder text-dark p-0" id="welcome">
+                <div class="row p-2">
+                    <div class="bg-white rounded-pill font-weight-bolder text-dark" id="welcome">
                         <div class="row">
-                            <div class="col-6 align-middle mt-1" id="note">GoodMorinig, Pranay.</div>
-                            <div class="col-1 mt-2">
-                                <div class="vl" style="height: 25px;"></div>
+                            <div class="col-8 align-middle" id="welcome_note"></div>
+                            <div class="col-0.5">
+                                <div class="vl mt-2"></div>
                             </div>
-                            <div class="col-2"><button class="btn bg-white btn-outline-none">
+                            <div class="col-0.5"><button class="btn bg-white btn-outline-none rounded-circle">
                                 <svg width="24" height="24" viewBox="3 3 24 24"><circle cx="15" cy="15" r="8.28" fill="transparent" stroke="currentColor" stroke-width="1.6"></circle><path d="M17.43 12.625l-4.8 4.8m0-4.8l4.8 4.8" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"></path></svg>
                             </button></div>
-                             <div class="col-2"><button class="btn bg-white btn-outline-none rounded-pill">
+                             <div class="col-1"><button class="btn bg-white btn-outline-none rounded-pill">
                                 <svg width="24" height="24" viewBox="0 0 24 24"><g fill="currentColor"><circle cx="11.76" cy="11.89" r="1"></circle><circle cx="15.29" cy="11.89" r="1"></circle><circle cx="8.24" cy="11.89" r="1"></circle></g><circle cx="12" cy="12" r="8.28" fill="transparent" stroke="currentColor" stroke-width="1.6"></circle></svg>
                             </button></div>
                         </div>
@@ -372,34 +368,34 @@
                 </div>
 
                 <!-- left column for adding the list items -->
-                <div class="row pl-4">
+                <div class="row">
                     <div class="col-6">
-                        <div id="quicktaskCard" class="card">
-                            <div id="scrolllinID" class="card-body">
+                        <div class="card rounded-lg">
+                            <div class="card-body" id="left_card">
                                 <div id="todayDiv">
-                                    <h5 id="todayDivChild" class="card-title font-weight-bold">Today
+                                    <h5 class="card-title font-weight-bold mb-5" id="todayDivChild">Today
                                         <div id="maintaskBar" class="float-right bg-secondary text-white font-weight-normal count">0</div>
                                     </h5>
                                 </div>
                                 <div>
-                                    <h5 id="tomorrowDivChild" class="card-title font-weight-bold">Tomorrow
-                                        <div id="maintaskBar" class="float-right bg-secondary rounded-circle text-white font-weight-normal">0</div>
+                                    <h5 id="todayDivChild" class="card-title font-weight-bold mb-5">Tomorrow
+                                        <div id="maintaskBar" class="float-right bg-secondary text-white font-weight-normal count">0</div>
                                     </h5>
                                 </div>
                                 <div>
-                                    <h5 id="UpcommingDivChild" class="card-title font-weight-bold">Upcoming
-                                        <div id="maintaskBar" class="float-right bg-secondary rounded-circle text-white font-weight-normal">0</div>
+                                    <h5 id="todayDivChild" class="card-title font-weight-bold mb-5">Upcoming
+                                        <div id="maintaskBar" class="float-right bg-secondary text-white font-weight-normal count">0</div>
                                     </h5>
                                 </div>
                                 <div>
-                                    <h5 id="somedayDivChild" class="card-title font-weight-bold">Someday
-                                        <div id="maintaskBar" class="float-right bg-secondary rounded-circle text-white font-weight-normal">0</div>
+                                    <h5 id="todayDivChild" class="card-title font-weight-bold mb-5">Someday
+                                        <div id="maintaskBar" class="float-right bg-secondary text-white font-weight-normal count">0</div>
                                     </h5>
                                 </div>
                             </div>
                             <div class="card-footer shadow-lg p-0 mb-0 bg-white rounded" >
-                                <input id="quickAddedTask" class="rounded-pill" type="text"placeholder="enter quick task here"  >
-                                <button id="taskAddbtn" type="button" class="btn btn-primary rounded-circle text-light mt-3 pt-1 pl-0 pr-0 ">
+                                <input id="quickAddedTask" class="rounded-pill mt-2" type="text" placeholder="enter quick task here">
+                                <button id="taskAddbtn" type="button" class="btn btn-primary rounded-circle text-light float-right mt-2 p-2">
                                     <svg class="" width="20" height="20" viewBox="0 0 15 17"><path fill="currentColor" d="M8.438 3.563l4.593 4.593a.928.928 0 001.312-1.313L8.16.66a.933.933 0 00-1.32 0L.656 6.844a.928.928 0 001.312 1.313l4.595-4.594v10.504c0 .515.417.933.933.933h.008a.933.933 0 00.934-.933V3.563z"></path></svg>
                                 </button>
                             </div>
@@ -408,10 +404,10 @@
 
                     <!-- right column for sync with calendar -->
                     <div class="col-6">
-                        <div class="card rounded-lg">
+                        <div class="card rounded-lg" id="cal">
                             <div class="card-body">
                                 <div class="card-title">
-                                   <h4 class="font-weight-bolder text-center mt-5">Sync Calendars</h4> 
+                                   <h4 class="font-weight-bolder text-center" id="sync">Sync Calendars</h4> 
                                    <p class="text-muted text-center">Connect with Google Calendar to unleash your full power productivity and always stay in-sync.</p>
                                    <button type="button" class="btn btn-primary btn-lg btn-block rounded-pill mb-5">
                                     <g transform="translate(20.192 16.688)"><path fill="#4385F5" d="M9.544 13.746C8.162 12.655 6.78 11.564 5.4 10.472c-.12-.095-.228-.205-.34-.307.935-.724 1.716-1.58 2.229-2.668.204-.434.348-.887.484-1.346.094-.317.065-.44-.322-.437-2.3.02-4.6.01-6.901.01-.488 0-.488 0-.488-.51 0-1.581.007-3.162-.007-4.742C.052.167.104.05.443.052c4.243.012 8.486.009 12.73.003.229 0 .373.017.413.3.527 3.76.104 7.355-1.838 10.674-.595 1.016-1.31 1.944-2.204 2.717"></path></g>
