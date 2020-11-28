@@ -1,6 +1,16 @@
 body{
-    
     background-image: url("https://cdn.pixabay.com/photo/2018/11/10/22/57/nature-3807667_1280.jpg");
+}
+
+#welcome_note {
+    margin-left: 20px;
+    padding: 8px;
+}
+
+#welcome {
+    margin-left: 20px;
+    margin-top: 20px;
+ 
 }
 
 #side_bar {
@@ -8,9 +18,7 @@ body{
     overflow-y:scroll !important;
 }
 #left_card {
-    height: 400px;
     overflow-y:scroll !important;
-    width: auto;
 }
 
 
@@ -31,7 +39,7 @@ img{
 }
 .vl {
     border-left: 1px solid rgb(184, 183, 183);
-    height: 400px;    
+    height: 25px;    
 }
 .hl {
     border-top: 1px solid rgb(184, 183, 183);
@@ -97,3 +105,21 @@ img{
 #todayDivChild,#tomorrowDivChild,#UpcommingDivChild,#somedayDivChild{
     margin-bottom: 50px; 
 } 
+#cal,#left_card {
+    height: 362px;
+    border-radius: 3% !important;
+    width: auto;
+}
+#sync {
+    margin-top: 100px;
+}
+#quicktaskCard{
+    border-radius: 15px;
+}
+
+input {
+    outline: none;
+}
+
+
+/* todaydivchild,   maintaskbar  */
