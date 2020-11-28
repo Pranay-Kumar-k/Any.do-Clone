@@ -110,11 +110,11 @@ var allTasks = document.getElementById("allTasks")
 localStorage.setItem('allusers', JSON.stringify(users))
 
 let side_bar_today = document.querySelector(".today")
-let dayDivChild = document.getElementById("todayDivChild")
 let main_today_count = document.querySelector("#todayDivChild > .count")
+let dayDivChild = document.getElementById("todayDivChild")
 var todayDIv = document.getElementById("todayDiv")
 let name = document.getElementById('name')
-
+let left_card_body = document.getElementById('left_card')
 // let allUsers = users
 var allUsers = JSON.parse(localStorage.getItem("allusers"))
 // console.log(allUsers)
@@ -331,23 +331,21 @@ function handleQuickTask(value){
 function handleCheckBoxes(){
     
     var allCheckBoxes = document.querySelectorAll("input")
+    main_today_count = document.querySelector("#todayDivChild > .count")
+    dayDivChild = document.getElementById("todayDivChild")
     
     for(var i = 0; i < allCheckBoxes.length; i++){
         if( (allCheckBoxes[i].type) && allCheckBoxes[i].type === "radio"){
             
-            // let count  = Number(document.querySelector("#todayDivChild > .count").textContent)
-            // let today_count = Number(document.querySelector(".today").textContent)
-            
-        // document.querySelector("#todayDivChild > .count").textContent = count-1
-        
         allCheckBoxes[i].addEventListener("click", function(){
             var checkId = event.target.id
             var NumberCheckId = Number(checkId)
             var requiredId = NumberCheckId + 1
             console.log(requiredId)
             var requiredElement = document.getElementById(requiredId)
-            // document.querySelector(".today").textContent = today_count-1
                 requiredElement.remove()
+                side_bar_today.textContent = Number(side_bar_today.textContent) - 1
+                main_today_count.textContent = Number(main_today_count.textContent) - 1
             })
         }
     }
@@ -355,99 +353,77 @@ function handleCheckBoxes(){
 
 
 
-function handleTodaysData(){
-    var quicktaskCard = document.getElementById("left_card")
-    quicktaskCard.textContent =""
-    var h5 = document.createElement("h5")
-    h5.setAttribute("class","h5 p-1 m-1")
-    h5.textContent ="Today"
+function handleTodaysData() {
+    handleCheckBoxes()
 
-    quicktaskCard.appendChild(h5)
-    var presentDate = new Date().getDay()
+    let presentDate = new Date().getDay()
+    left_card_body.innerHTML =""
 
+    let h5 = document.createElement('h5')
+    h5.textContent = "Today"
+    h5.setAttribute('class',"card-title font-weight-bold mb-5")
+    h5.setAttribute("id","todayDivChild")
     
-    for( listType in currentuserDetails) {
-        for(date in currentuserDetails[listType]){
-            
-            
-            var dateInList = currentuserDetails[listType][date]
-            if(dateInList == presentDate){
-                
-                var listOfTasks = currentuserDetails[listType]
-                listOfTasks = listOfTasks[date]
-                for(var k=0;k<listOfTasks.length;k++){
-                    var currentid = localStorage.getItem("i")
+    let div = document.createElement('div')
+    // div.setAttribute("id","todayDiv")
+    let count = document.createElement('div')
+    count.textContent = currentuserDetails.personal[presentDate].length
+    count.setAttribute("class","float-right bg-secondary text-white font-weight-normal count")
+    count.setAttribute('id',"maintaskBar")
+    h5.append(count)
+    div.append(h5)
+
+    // let card_div = document.createElement('div')
     
-                    
-                    var dataTask = listOfTasks[k]
+    for(var i=(currentuserDetails.personal[presentDate]).length-1; i>=0 ; i--) {
+        // console.log(user.tasks.personal[today][i]) 
+        var chekcbox  = document.createElement("input")
+        chekcbox.setAttribute("type","radio")
+        
+        chekcbox.style.width = "20px"
+        chekcbox.style.height = "20px"
+        chekcbox.style.marginRight= "10px"
+        
+    
+    chekcbox.style.float = "left"
+    var taskDiv = document.createElement("div")
+    var textDiv = document.createElement("div")
 
-                    if(dataTask.length == 0){
-                        return
-                    }
-
-                    // create a checkbox
-                    var chekcbox  = document.createElement("input")
-                    chekcbox.setAttribute("type","radio")
-                    var checkBoxId = currentid 
-                    currentid = Number(currentid) + 1 
-                    console.log("checkbox id "+checkBoxId);
-                    chekcbox.setAttribute("id",checkBoxId)
-                    
-                    chekcbox.style.width = "20px"
-                    chekcbox.style.height = "20px"
-                    chekcbox.style.marginRight= "10px"
-                    
-                    
-                    chekcbox.style.float = "left"
-                    var taskDiv = document.createElement("div")
-                    var textDiv = document.createElement("div")
-                    textDiv.innerHTML = dataTask
-                    textDiv.style.width = "auto"
-                    
-                    taskDiv.style.padding = "8px"
-                    taskDiv.style.margin = "20px 0px 20px 0px"
-                    taskDiv.style.border = "2px solid pink"
-                    taskDiv.style.borderRadius = "7px"
-                    //to set the id for the taskDiv
-                    var taskDivId = currentid 
-                    console.log(taskDivId);
-                    taskDiv.setAttribute("id",taskDivId)
-                    currentid++
-                    //again store the value i in local storaget
-                    localStorage.setItem("i",currentid)
-                    
-                    taskDiv.appendChild(chekcbox)
-                    taskDiv.appendChild(textDiv)
-                    // var todayDIv = document.getElementById("todayDiv")
-                    quicktaskCard.appendChild(taskDiv)
-
-                    handleCheckBoxes()
-                }
-            }
-        }
+    textDiv.innerHTML = (currentuserDetails.personal[presentDate])[i]
+    // console.log(textDiv.textContent)
+    textDiv.style.width = "auto"
+    
+    taskDiv.style.padding = "8px"
+    taskDiv.style.margin = "20px 0px 20px 0px"
+    taskDiv.style.border = "2px solid pink"
+    taskDiv.style.borderRadius = "7px"
+    chekcbox.setAttribute('id',i)
+    taskDiv.setAttribute('id',i+1)
+    
+    taskDiv.append(chekcbox)
+    taskDiv.append(textDiv)
+    div.append(taskDiv)
     }
+    left_card_body.append(div)
+    handleCheckBoxes()
 }
 
 
 
-
 function saveTask(task){
-    var currentUserName = JSON.parse(localStorage.getItem("currentUser"))
+    user = JSON.parse(localStorage.getItem("currentUser"))
+    // console.log(user)
+    allUsers = JSON.parse(localStorage.getItem("allusers"))
+    console.log(allUsers[user].tasks);
 
-    var allUsers = JSON.parse(localStorage.getItem("allusers"))
+    let curr_user_tasks = allUsers[user].tasks.personal
 
-    var currentuserDetails = allUsers[currentUserName].tasks
     var presentDate = new Date().getDay()
-    for(date in currentuserDetails.personal){
-        var dateInList = currentuserDetails.personal.presentDate
-        console.log(dateInList)
-            if(dateInList == presentDate){
-                
-                var listOfTasks = currentuserDetails.personal
-                listOfTasks = listOfTasks[date]
-                console.log( listOfTasks);
-                listOfTasks.push(task)
-            }
-    }
+    // console.log(presentDate);
+    // console.log(curr_user_tasks[presentDate]);
+    var listOfTasks = curr_user_tasks[presentDate]
+    
+    console.log( listOfTasks);
+    listOfTasks.push(task)
     localStorage.setItem("allusers",JSON.stringify(allUsers))
 }
