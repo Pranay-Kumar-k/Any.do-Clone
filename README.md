@@ -14,10 +14,10 @@ A clone of Any.do To-Do List app created using bootstrap v4.5, HTML5, CSS3, java
 Its simple clone of application called Any.do to-do list app.
 
 ## Screenshots
-![Home page]()
-![Signup page]()
-![dashboard]()
-![dashboard]()
+![Home page](https://github.com/pranaykumar999/Any.do-Clone/blob/main/screenshots/home_page.png)
+![Signup page](https://github.com/pranaykumar999/Any.do-Clone/blob/main/screenshots/Signup_page.png)
+![dashboard](https://github.com/pranaykumar999/Any.do-Clone/blob/main/screenshots/Dashboard_page.png)
+![dashboard](https://github.com/pranaykumar999/Any.do-Clone/blob/main/screenshots/Dashboard_addtask.png)
 
 
 ## Technologies
