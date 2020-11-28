@@ -23,4 +23,20 @@ img{
     /* margin-top: 100px; */
 }
 
+#id1 > input[type=text] {
+  width: 10px;
+  border: 1px solid red;
+  border-radius: 24px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('https://lh3.googleusercontent.com/5UqQntAS3F0LVSZBWZ42dXrqffjAg2-5RS3XiLJYSu_D7OQBuJ8pHBtOllx_inaUFMdmLg=s17');
+  background-position: 10px 17px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  transition: width 0.4s ease-in-out;
+}
 
+#id1 > input[type=text]:focus {
+  width: 50%;
+  border: 0px solid yellow;
+}

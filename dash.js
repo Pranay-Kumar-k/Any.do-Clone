@@ -7,4 +7,10 @@ window.onload =() => {
     })
 }
 
+$(document).ready(function(){
+  $("#id1").click(function(){
+    $("#id2").css("margin-right", "560px");
+  });
+});
+
 
