@@ -108,6 +108,7 @@ var nextSevendays = document.getElementById("nextSevenDays")
 var allTasks = document.getElementById("allTasks")
 
 localStorage.setItem('allusers', JSON.stringify(users))
+let calendar = document.getElementById('cal')
 
 let side_bar_today = document.querySelector(".today")
 let main_today_count = document.querySelector("#todayDivChild > .count")
@@ -358,6 +359,7 @@ function handleTodaysData() {
 
     let presentDate = new Date().getDay()
     left_card_body.innerHTML =""
+    calendar.remove()
 
     let h5 = document.createElement('h5')
     h5.textContent = "Today"
