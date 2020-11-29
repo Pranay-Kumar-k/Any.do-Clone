@@ -28,7 +28,7 @@ Project is created with:
 * JavaScript
 
 ## Setup
-* It's simple, first need to clone this to your loacl system by using link https://github.com/pranaykumar999/Any.do-Clone.git
+* It's simple, first need to clone this to your local system by using link https://github.com/pranaykumar999/Any.do-Clone.git
 
 * start this app by running Home.html file.
       
