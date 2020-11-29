@@ -28,8 +28,10 @@ Project is created with:
 * JavaScript
 
 ## Setup
-It's simple, first need to start this app by running Home.html file.
+* It's simple, first need to clone this to your loacl system by using below link
 
+* start this app by running Home.html file.
+      
 ## Features
 * Create, edit, delete tasks and lists.
 * Real-time sync across all of a user's devices.
