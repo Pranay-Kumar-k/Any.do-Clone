@@ -26,11 +26,14 @@ Project is created with:
 * HTML5
 * CSS3
 * JavaScript
+* LocalStorage
 
 ><img height="40" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSSYXDgtUuX0KXITEzysyAq-gwLKRNalIEdUg&usqp=CAU">&nbsp;&nbsp;
     <img height="40" src="https://www.flaticon.com/svg/static/icons/svg/1216/1216733.svg">&nbsp;&nbsp;
     <img height="40" src="https://www.flaticon.com/svg/static/icons/svg/732/732190.svg">&nbsp;&nbsp;
     <img height="40" src="https://www.flaticon.com/svg/static/icons/svg/541/541509.svg">&nbsp;&nbsp;
+    <img height="40" src="https://static.thenounproject.com/png/585904-200.png">&nbsp;&nbsp;
+
 
 ## Setup
 * It's simple, first need to clone this to your local system by using link https://github.com/pranaykumar999/Any.do-Clone.git
